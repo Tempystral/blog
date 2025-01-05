@@ -1,0 +1,55 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			"**/.hugo_build.lock": true,
+
+			".forestry/": true,
+			"public/": true,
+			"resources/": true
+		},
+		"terminal.integrated.defaultLocation": "view",
+		"terminal.integrated.cwd": "${workspaceFolder}",
+
+		"[markdown]": {
+			"editor.wordWrap": "on"
+		},
+
+		"[mdx]": {
+			"editor.wordWrap": "on"
+		},
+
+		"[javascript]": { "editor.defaultFormatter": "biomejs.biome" },
+		"[typescript]": { "editor.defaultFormatter": "biomejs.biome" },
+		"[javascriptreact]": { "editor.defaultFormatter": "biomejs.biome" },
+		"[typescriptreact]": { "editor.defaultFormatter": "biomejs.biome" },
+		"[json]": { "editor.defaultFormatter": "biomejs.biome" },
+		"[jsonc]": { "editor.defaultFormatter": "biomejs.biome" },
+
+		"editor.formatOnSave": true,
+		"prettier.documentSelectors": ["**/*.astro"],
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "never",
+			"source.organizeImports.biome": "explicit",
+			"quickfix.biome": "explicit"
+		},
+
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"astro.content-intellisense": true
+	},
+	"extensions": {
+		"recommendations": ["astro-build.astro-vscode"],
+		"unwantedRecommendations": []
+	}
+}
