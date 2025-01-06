@@ -3,10 +3,10 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Chris Williams",
+	author: "Tempystral",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "en-GB",
+		locale: "en-CA",
 		options: {
 			day: "numeric",
 			month: "short",
@@ -14,13 +14,13 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	// Used as the default description meta property and webmanifest description
-	description: "An opinionated starter theme for Astro",
+	description: "A blog!",
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
-	lang: "en-GB",
+	lang: "en-CA",
 	// Meta property, found in src/components/BaseHead.astro L:42
-	ogLocale: "en_GB",
+	ogLocale: "en_CA",
 	// Used to construct the meta title property found in src/components/BaseHead.astro L:11, and webmanifest name found in astro.config.ts L:42
-	title: "Astro Theme Cactus",
+	title: "Eye of the Storm",
 };
 
 // Used to generate links in both the Header & Footer.
@@ -45,6 +45,9 @@ export const menuLinks: { path: string; title: string }[] = [
 
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
+	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes
+	themes: ["dark-plus", "github-light"],
+	useThemedScrollbars: false,
 	styleOverrides: {
 		borderRadius: "4px",
 		codeFontFamily:
@@ -68,7 +71,4 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 		// return default selector
 		return `[data-theme="${theme.name}"]`;
 	},
-	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes
-	themes: ["dracula", "github-light"],
-	useThemedScrollbars: false,
 };

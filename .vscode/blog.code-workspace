@@ -17,7 +17,17 @@
 
 			".forestry/": true,
 			"public/": true,
-			"resources/": true
+			"resources/": true,
+			".prettier*": true,
+			".npmrc": true,
+			".nvmrc": true,
+			".editorconfig": true,
+			"postcss*": true,
+			"pnpm-lock*": true,
+			"netlify.toml": true,
+			"node_modules": true,
+			"dist": true,
+			".astro": true
 		},
 		"terminal.integrated.defaultLocation": "view",
 		"terminal.integrated.cwd": "${workspaceFolder}",
