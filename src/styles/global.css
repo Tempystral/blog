@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Cascadia Mono;
-  src: url("../assets/CascadiaMono.ttf");
+	font-family: Cascadia Mono;
+	src: url("../assets/CascadiaMono.ttf");
 }
 
 @layer base {
+	:root {
+		--bevel-tl: 0 0, 0 0;
+		--bevel-bl: 0 100%, 0 100%;
+		--bevel-br: 100% 100%, 100% 100%;
+		--bevel-tr: 100% 0, 100% 0;
+	}
+
 	:root,
 	:root[data-theme="light"] {
 		color-scheme: light;
@@ -28,5 +35,32 @@
 		--theme-accent: 159deg 64% 45%;
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
+	}
+}
+
+@layer components {
+	.aside-wrapper {
+		position: relative;
+		/* @apply border-b-8 border-l-4 border-r-8 border-t-4 border-solid; */
+		@apply ml-0 pb-2 pl-1 pr-2 pt-1;
+		@apply rounded-b-3xl rounded-r-3xl rounded-tl-2xl;
+		&::before {
+			content: "";
+			position: absolute;
+			@apply sm:-inset-5 sm:size-16;
+			@apply aspect-square rounded-full bg-accent;
+		}
+	}
+	.aside-body {
+		/* @apply border-b-8 border-l-2 border-r-8 border-t-2 border-solid; */
+		@apply border-4 border-solid border-bgColor;
+		@apply rounded-bl-sm rounded-br-2xl rounded-tl-xl rounded-tr-sm;
+		@apply -inset-x-1.5 -inset-y-1.5;
+		@apply bg-slate-800 text-bgColor dark:bg-slate-200;
+	}
+
+	.angled-corner {
+		background-color: var(--bg-accent);
+		background: linear-gradient(315deg, transparent 20px, var(--theme-accent) 0) bottom right;
 	}
 }

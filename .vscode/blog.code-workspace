@@ -18,14 +18,14 @@
 			".forestry/": true,
 			"public/": true,
 			"resources/": true,
-			".prettier*": true,
+			"*prettier*": true,
 			".npmrc": true,
 			".nvmrc": true,
 			".editorconfig": true,
 			"postcss*": true,
 			"pnpm-lock*": true,
 			"netlify.toml": true,
-			"node_modules": true,
+			//"node_modules": true,
 			"dist": true,
 			".astro": true
 		},
@@ -49,6 +49,8 @@
 
 		"editor.formatOnSave": true,
 		"prettier.documentSelectors": ["**/*.astro"],
+		"prettier.prettierPath": "node_modules/prettier",
+		"prettier.configPath": "prettier.config.mjs",
 		"editor.codeActionsOnSave": {
 			"source.organizeImports": "never",
 			"source.organizeImports.biome": "explicit",
@@ -56,7 +58,15 @@
 		},
 
 		"typescript.tsdk": "node_modules/typescript/lib",
-		"astro.content-intellisense": true
+		"astro.content-intellisense": true,
+		// This is just to make tailwind class strings shorter visually
+		"[astro]": {
+			"editor.wordWrap": "wordWrapColumn",
+			"editor.wordWrapColumn": 80
+		},
+		"tailwindConfigViewer.workspacePath": "",
+		"tailwind-fold.foldStyle": "QUOTES",
+		"tailwind-fold.unfoldIfLineSelected": true
 	},
 	"extensions": {
 		"recommendations": ["astro-build.astro-vscode"],

@@ -16,7 +16,7 @@ const comments = mentions.filter(
 );
 
 /**
- ! show a link to the mention 
+ ! show a link to the mention
 
  */
 ---
@@ -37,8 +37,7 @@ const comments = mentions.filter(
 									href={mention.author.url}
 									rel="noreferrer"
 									target="_blank"
-									title={mention.author.name}
-								>
+									title={mention.author.name}>
 									<Image
 										alt={mention.author?.name}
 										class="u-photo my-0 h-12 w-12"
@@ -67,8 +66,7 @@ const comments = mentions.filter(
 									class="u-url not-prose hover:text-link"
 									href={mention.url}
 									rel="noreferrer"
-									target="_blank"
-								>
+									target="_blank">
 									<span class="hidden" id="cmt-source">
 										Vist the source of this webmention
 									</span>

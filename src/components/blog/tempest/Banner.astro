@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	title?: string;
+	accent?: keyof typeof colors;
+}
+
+const { title, accent: selected = "amber" } = Astro.props;
+
+const colors = {
+	blue: "bg-sky-800",
+	amber: "bg-amber-400",
+	red: "bg-accent",
+	"accent-2": "bg-accent-2",
+	gray: "bg-slate-500",
+};
+
+const icons = [
+	{ name: "mdi:arrow-top-left-thick", size: 24 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+];
+---
+
+<div class={`aside-wrapper relative mt-8 mb-4 ${colors[selected]} before:bg-slate-200`}>
+	<div
+		class="relative -inset-y-8 -mb-7 mt-1 flex h-6 flex-row items-center gap-1 pr-2 text-accent sm:pl-10">
+		<span>
+			{
+				icons.map(({ name, size }) => (
+					<Icon aria-hidden="true" class="inline" focusable="false" name={name} size={size} />
+				))
+			}
+		</span>
+		<!-- <span class="text-xl">• • • • •</span> -->
+		<span class="text-md flex-grow font-bold">{title}</span>
+		<Icon
+			aria-hidden="true"
+			class="inline"
+			focusable="false"
+			name="mdi:arrow-bottom-right-thick"
+			size={24}
+		/>
+	</div>
+	<p class="aside-body relative px-8 py-2">
+		<slot />
+	</p>
+</div>

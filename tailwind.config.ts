@@ -2,6 +2,8 @@ import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
+const bevelAmt = "2rem";
+
 export default {
 	content: [
 		"./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}",
@@ -30,6 +32,23 @@ export default {
 				},
 				".title": {
 					"@apply text-2xl font-semibold text-accent-2": {},
+				},
+				".bg-bevel": {
+					"clip-path":
+						"polygon(var(--bevel-tl), var(--bevel-tr), var(--bevel-br), var(--bevel-bl));",
+
+					"&.bevel-tl": {
+						"--bevel-tl": `0 ${bevelAmt}, ${bevelAmt} 0`,
+					},
+					"&.bevel-bl": {
+						"--bevel-bl": `${bevelAmt} 100%, 0 calc(100% - ${bevelAmt})`,
+					},
+					"&.bevel-br": {
+						"--bevel-br": `100% calc(100% - ${bevelAmt}), calc(100% - ${bevelAmt}) 100%`,
+					},
+					"&.bevel-tr": {
+						"--bevel-tr": `calc(100% - ${bevelAmt}) 0, 100% ${bevelAmt}`,
+					},
 				},
 			});
 		}),

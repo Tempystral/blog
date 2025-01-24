@@ -23,6 +23,18 @@ export interface SiteMeta {
 	title: string;
 }
 
+export interface SocialLink {
+	name: string;
+	isWebmention?: boolean;
+	link: string;
+	icon: string;
+	color?: string;
+	style?: string;
+}
+
+export const AdmonitionOptions = ["tip", "note", "important", "caution", "warning"] as const;
+export type AdmonitionType = (typeof AdmonitionOptions)[number]; //"tip" | "note" | "important" | "caution" | "warning";
+
 /** Webmentions */
 export interface WebmentionsFeed {
 	children: WebmentionsChildren[];
@@ -78,5 +90,3 @@ export interface Summary {
 	"content-type": string;
 	value: string;
 }
-
-export type AdmonitionType = "tip" | "note" | "important" | "caution" | "warning";
