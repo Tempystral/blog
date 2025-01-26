@@ -43,6 +43,17 @@ export const menuLinks: { path: string; title: string }[] = [
 	},
 ];
 
+// TODO: Something like this for more easily adding custom colour splashes.
+// Set up tailwind theme, then assign these to the new themed vars
+// Probably don't need the theme options here if they're set up correctly for dark/light in tailwind
+/* const colors: {light: string, dark: string} = {
+	blue: {light: "bg-sky-800"},
+	amber: {light: "bg-amber-400"},
+	red: {light: "bg-accent"},
+	"accent-2": {light: "bg-accent-2"},
+	gray: {light: "bg-slate-500"},
+}; */
+
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes

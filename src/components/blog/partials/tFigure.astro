@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	src: string;
+	alt?: string;
+	width?: number;
+}
+const { src, alt } = Astro.props;
+
+let img: ImageMetadata | null = null;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"@/content/post/**/*.{jpeg,jpg,png,gif,webp}",
+);
+const slug = Astro.url.pathname.split("/")[2];
+const path = `/src/content/post/${slug}/${src}`;
+if (images[path]) {
+	img = (await images[path]()).default;
+}
+---
+
+<figure class="rounded-md bg-accent px-2 pt-2">
+	{
+		img && (
+			<a href={img.src}>
+				<Image
+					src={img}
+					alt={alt ?? ""}
+					class="not-prose -mb-1.5 rounded-sm bg-bgColor dark:bg-textColor"
+				/>
+			</a>
+		)
+	}
+	<figcaption class="text-md flex items-center pb-0.5 text-right text-bgColor">
+		<span class="flex-grow">
+			<slot>
+				<p class="-mb-1.5"></p>
+			</slot>
+		</span>
+		<Icon name="mdi:arrow-bottom-right-thick" class="text-textColor" size={32} />
+	</figcaption>
+</figure>

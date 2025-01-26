@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	src: string;
+	width?: number;
+	loop?: boolean;
+	controls?: boolean;
+	autoplay?: boolean;
+	muted?: boolean;
+}
+
+const { src, width, loop = true, controls = true, muted = true } = Astro.props;
+const format = `video/${src.substring(src.lastIndexOf(".") + 1)}`;
+---
+
+<figure class="relative rounded-md bg-accent py-2 pr-2">
+	<div class="relative">
+		<div
+			class="absolute flex h-full w-4 flex-col items-center gap-1 bg-amber-400 px-0.5 py-1 subpixel-antialiased">
+			<Icon aria-hidden="true" class="" focusable="false" name="mdi:eye" />
+			<Icon aria-hidden="true" class="" focusable="false" name="mdi:eye-outline" />
+			<Icon aria-hidden="true" class="" focusable="false" name="mdi:eye-closed" />
+			<Icon aria-hidden="true" class="" focusable="false" name="mdi:eye-off" />
+			<span class="flex-grow"></span>
+			<Icon aria-hidden="true" class="" focusable="false" name="mdi:arrow-top-right-thick" />
+		</div>
+		<video
+			width={`${width ?? "auto"}`}
+			preload="auto"
+			controls={controls}
+			loop={loop}
+			muted={muted}
+			playsinline
+			class="not-prose rounded-sm pl-4">
+			<source src={src} type={format} />
+		</video>
+	</div>
+	<figcaption class="text-md flex items-center px-2 text-bgColor">
+		<span class="flex-grow">
+			<slot>
+				<p class="-mb-3"></p>
+			</slot>
+		</span>
+		<Icon name="mdi:arrow-bottom-right-thick" class="text-textColor" size={32} />
+	</figcaption>
+</figure>
