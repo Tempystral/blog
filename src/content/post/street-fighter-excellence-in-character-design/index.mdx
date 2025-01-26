@@ -36,10 +36,6 @@ resources:
   - name: sagat vs zangief
     src: images/sagat_vs_zangief.jpg
 ---
-import TFigure from "@/components/blog/partials/tFigure.astro";
-import TVideo from "@/components/blog/partials/tVideo.astro";
-import dan from "./images/dan_3k.webp"
-import terry from "./images/terry_vs_roy.png"
 
 I've been playing a lot of Street Fighter lately. SFV just had a sale on Steam which gave me an excuse to practice with some other new players, and it's been a blast. I've been getting a lot better too! After only a week I'm hitting my combos fairly often and I'm making far fewer mechanical errors. I also just received some new parts for my arcade stick, which are making the controls feel much more responsive.
 
@@ -53,17 +49,18 @@ The game releases on June 2nd, so while I wait I wanted to talk about Street Fig
 Fighting games have a unique challenge in that they don't have many opportunities to flesh out their characters beyond the stage of combat. Modern fighting games offer stories and other single-player content, but the majority of a player's time is still spent doing battle where the game's focus lies almost entirely on gameplay. I know some people - even fighting game pros - don't care much for the lore in fighting games, but I'm willing to bet that the series which survived the 90s did so not just because they were fun, but because they offered a compelling cast. This, I think, is something Street Fighter does exceptionally well.
 
 {/* <!-- Display a picture of a distinct character who is not Ryu-levels of famous but still from a current legacy franchise next to a failed 90s design --> */}
-<TFigure src="images/terry_vs_roy.png" alt="Terry Bogard from Real Bout Fatal Fury 2 next to Ray McDougal from Fighter's History">
+<Figure src="images/terry_vs_roy.png" alt="Terry Bogard from Real Bout Fatal Fury 2 next to Ray McDougal from Fighter's History">
   This isn't an easy task. Take a look at [Terry](https://www.giantbomb.com/terry-bogard/3005-34/images/), left, and [Ray](https://www.giantbomb.com/ray-mcdougal/3005-34052/images/), right. Which do you think made it out of the 90s?
-</TFigure>
+</Figure>
+
 
 {/* <!-- Terry: https://www.giantbomb.com/terry-bogard/3005-34/images/ -->
 <!-- ray: https://www.giantbomb.com/ray-mcdougal/3005-34052/images/ --> */}
 
 ## Dan
-<TFigure src="images/dan_3k.webp" alt="Dan performs a kiai towards the camera, as though he were throwing a fireball.">
+<Figure src="images/dan_3k.webp" alt="Dan performs a kiai towards the camera, as though he were throwing a fireball.">
   Image from the [Street Fighter Wiki](https://streetfighter.fandom.com/wiki/Dan)
-</TFigure>
+</Figure>
 
 The quintessential joke character! Originally [a jab at rival fighting game company SNK](https://www.youtube.com/watch?v=2A6ybix-3qo&t=159s), Dan has come a long way from his origin in Street Fighter Alpha and stands nearly toe-to-toe with the rest of the SFV cast. However despite his improvements, Dan's characteristic inexperience still shows through his moveset.
 
@@ -75,7 +72,7 @@ Some of Dan's striking moves cause him to reach awkwardly because he's striking 
 
 {/* <!-- Stand Roundhouse animation --> */}
 {/* {{< video src="dan 5hk" loop="true" >}} */}
-<TVideo src="/videos/5HK.mp4">A swing and a miss</TVideo>
+<Video src="/videos/5HK.mp4">A swing and a miss</Video>
 
 His back-throw is also great; Dan always seems to have underestimated his opponent's weight and barely makes the throw after two attempts. I love how exhausted he looks after performing the throw, too.
 
@@ -90,24 +87,26 @@ I love Dan because even if you know nothing about him, you can immediately tell 
 ## Marisa
 The character I'm most looking forward to in SF6 is Marisa. She's a huge bruiser style character who just beats the crap out of the opponent. She's a jewelry-maker from Italy, an amusingly dainty profession for someone with such a fearsome stature. She also exemplifies Street Fighter's trend of highly efficient character design.
 
-<TFigure src="images/Marisa_ss03.webp" alt="Marisa throws an advancing punch at Luke.">
+<Figure src="images/Marisa_ss03.webp" alt="Marisa throws an advancing punch at Luke.">
   Image from the [Street Fighter Wiki](https://streetfighter.fandom.com/wiki/Marisa)
-</TFigure>
+</Figure>
 
 Marisa poses the same challenge as Zangief and Sagat: She's large and represents a sport with simple attire. For characters like this, it can be difficult to make them distinct. Modern combat sports have sparse and utilitarian uniforms designed to offer a wide range of motion. They aren't meant to be flashy, and altering them too much could affect legibility. It's also easier to customize clothing than bare skin, and big characters are often designed with limited clothing to show off their brawn. Sagat stands apart with his shaved head, eyepatch and scar which are tied to his backstory, but Zangief is - chest hair aside - a very normal looking wrestler from the 80s.
 
-<TFigure src="images/sagat_vs_zangief.jpg" alt="Sagat faces down Zangief in Street Fighter V.">
+<Figure src="images/sagat_vs_zangief.jpg" alt="Sagat faces down Zangief in Street Fighter V.">
   Iconic today, but these two really had to work for that recognition.
-</TFigure>
+</Figure>
+
+BaseHead
 
 Marisa is implied to practice Pankration, which has parallels to modern-day MMA, and her visual design reflects that. However, some very careful tweaks to the MMA uniform make her design shine where it could easily fail.
 
 Marisa wears the gear one would expect of an MMA fighter: Compression shorts and shirt, plus kickboxing gloves and ankle wraps. However, she also wears a pleated skirt evocative of the pteruges worn by ancient Greek soldiers. Her hair is shaped like a late Corinthian helmet, a style made immortal in film and video games. The black body and gold trim on her clothes is reminiscent of the distinctive red-figure pottery of ancient Greece. Finally, her sword-shaped necklace offers insight into her profession as a jewelry-maker and further reinforces her ancient ancestry.
 
 {/* <!-- Comparison of Marisa and Corinthian soldier --> */}
-<TFigure src="images/marisa_v_hoplite.png" alt="Marisa posed next to a model of a hoplite wearing a Corinthian helmet.">
+<Figure src="images/Marisa_v_hoplite.png" alt="Marisa posed next to a model of a hoplite wearing a Corinthian helmet.">
   Marisa, left. Source: [Street Fighter Wiki](https://streetfighter.fandom.com/wiki/Marisa). Athenian hoplite, right, by Tilemahos Efthimiadis. Source: [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Athenian_hoplite.jpg)
-</TFigure>
+</Figure>
 
 
 These additions are all simple, but make Marisa feel more connected to her heritage - important for a World Warrior - and communicate to a player a sense of strength and regality. Simple but effective, my favourite kind of design.

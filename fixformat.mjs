@@ -11,7 +11,7 @@ const patterns = {
 
 try {
 	const blogposts = "./src/content/post/**/*.{md,mdx}";
-	let resources = [];
+	const resources = [];
 	let results = "";
 
 	results = await replaceInFile({
@@ -28,7 +28,7 @@ try {
 		const file = fs.readFileSync(path, { encoding: "utf-8" });
 		const matches = Array.from(file.matchAll(patterns.resources));
 		if (matches.length) {
-			resources = matches.map((m) => [m.groups.name, m.groups.src]);
+			matches.forEach((m) => resources.push([m.groups.name, m.groups.src]));
 			console.log("Grabbed resources: ", resources);
 
 			results = replaceInFileSync({

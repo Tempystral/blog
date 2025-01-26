@@ -32,3 +32,10 @@ I don't want to do this by hand. I'm a programmer!
 - I had already made one and it turns out the replace method does output named capture groups in the order you specify them
 - This means I could actually move around the text to check (also made possible by my regex having lookaheads) and the arguments would still come in the same
 - Just had to add a first `match` argument to my replacer method
+
+## The MDX Plugin is new and that means it's not feature-rich
+One annoying thing about MDX is the language server isn't very good. You don't get autocompletion for imports like with other languages and you have to put these ugly imports at the top of your markdown file. I'm not doing that for every file!
+
+This person had the same use case for astro/MDX as me, so I'm following their example: https://rimdev.io/automatically-import-components-in-astro-mdx
+- The trick to this is that the layout itself doesn't render the content. Posts are stored in a collection, so the _collection_ defines the content, and the layout itself is used by that collection to display the page.
+- As it turns out they literally addressed this issue in the plugin today so maybe I don't need this change: https://github.com/mdx-js/mdx-analyzer/pull/491

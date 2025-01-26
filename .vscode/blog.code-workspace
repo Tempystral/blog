@@ -1,6 +1,15 @@
 {
 	"folders": [
 		{
+			"name": "Posts",
+			"path": "../src/content/post"
+		},
+		{
+			"name": "src",
+			"path": "../src"
+		},
+		{
+			"name": "Project",
 			"path": ".."
 		}
 	],
@@ -14,7 +23,7 @@
 			"**/.DS_Store": true,
 			"**/Thumbs.db": true,
 			"**/.hugo_build.lock": true,
-
+			".github/": true,
 			".forestry/": true,
 			"resources/": true,
 			"*prettier*": true,
@@ -46,6 +55,13 @@
 		"[json]": { "editor.defaultFormatter": "biomejs.biome" },
 		"[jsonc]": { "editor.defaultFormatter": "biomejs.biome" },
 
+		"emmet.includeLanguages": {
+			"mdx": "html"
+		},
+		"emmet.syntaxProfiles": {
+			"javascript": "mdx"
+		},
+
 		"editor.formatOnSave": true,
 		"prettier.documentSelectors": ["**/*.astro"],
 		"prettier.prettierPath": "node_modules/prettier",
@@ -63,7 +79,6 @@
 			"editor.wordWrap": "wordWrapColumn",
 			"editor.wordWrapColumn": 80
 		},
-		"tailwindConfigViewer.workspacePath": "",
 		"tailwind-fold.foldStyle": "QUOTES",
 		"tailwind-fold.unfoldIfLineSelected": true
 	},
