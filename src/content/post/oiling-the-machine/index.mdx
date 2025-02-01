@@ -14,13 +14,13 @@ tags: [git, programming]
 categories: [Software Development]
 ---
 
-{{< details "### A quick site update" open >}}
+:::note[A quick site update]
 First real post of the year! I've made some updates to the site, so this post will be somewhat content-light. I have decided that if I'm going to actually use this blog, I have to sit down and force myself to write something, and that means I need a schedule. For now I've committed to biweekly posts. Should be a quick enough pace to keep me engaged but still enable research and proofreading for more involved writing.
 
 I'm not placing a limit on what I write about - It may be software, entertainment, politics, or just something I had on my mind that day. The goal is to encourage myself to write _regardless_ of the contents, but I'm aiming to have some actual quality on here by the end of the year. If all goes well, that will mean 26 posts by Christmas!
 
 If you don't care about software dev, don't worry; I have a bunch of posts lined up, covering topics like liminal spaces and urbanism, Final Fantasy, honesty in political discourse, and the ethics of bad media. There'll be meat on these bones soon.
-{{< /details >}}
+:::
 
 ---
 
@@ -34,28 +34,23 @@ In general, there are three principles I try to follow when making contributions
 
 ### Name branches clearly.
 
-{{< columns >}}
+
 At my job, we often run into situations where we want to reference code changes being made, but the git branch in question is named something arcane like "fixes" or "Issue-132". Any time we want to discuss the change, we need to look at the issue tracker and search for the item. It's hardly the worst thing, but it is needlessly laborious and it slows our meetings down to a crawl.
 
-<--->
 
-<Figure src="images/bad-branch-names.png" alt="Two git branches named \"minor fixes\" and \" sdz-179\".">
+
+<Figure src="images/bad-branch-names.png" alt='Two git branches named "minor fixes" and "sdz-179".'>
 What are these branches for? What are we changing here?
 </Figure>
 
-{{< /columns >}}
 
-{{< columns >}}
-
-<Figure src="images/good-branch-names.png" alt="A pair of git branches named \"sdz908-internal_logging_cleanup\" and \"SDZ-861__Upload_Info_Alerts\".">
+<Figure src="images/good-branch-names.png" alt='A pair of git branches named "sdz908-internal_logging_cleanup" and "SDZ-861__Upload_Info_Alerts".'>
 I may not be working on these changes, but I have a pretty good idea of what's being changed
 </Figure>
 
-<--->
 
 This may seem obvious, but when creating a new branch, a good name is critical. A good branch name makes identifying its purpose and even its contents much easier. A team should be able to tell at a glance what issue your branch is meant to address. If you're using project management software like Jira or Trello, refer to ticket numbers in some way. Ideally, you shouldn't have to root around in Jira during meetings just to understand who's working on what.
 
-{{< /columns >}}
 
 ### Write clear commit messages.
 
@@ -76,7 +71,6 @@ Comments like "Review changes" or "fixes" require a reader to examine the change
 Early on in my current work project, there were a number of instances where a dev opened a pull request with 40 altered files across 3 commits. There's simply not enough space to communicate what was changed in any one of those commits, even if the dev had bothered to write comments for them. Reviewing those PRs was a nightmare, and it could have been avoided.
 
 I'm guilty of getting into the zone with my work and forgetting to commit changes, but it's something I try to be mindful of. If you're attentive to your progress and break up your work into atomic tasks, you can avoid this scenario and make your changes much easier to follow.
-<!-- TODO Not sure about this paragraph - consider text flow -->
 
 <Figure src="images/a-bad-pull-request.png" alt="A pull request containing 63 changed files with a title that does not convey what was changed. The description contains only a list of Jira tickets and a few hints at their contents.">
 Actually, it was worse than that. It was 63 files spread across three tickets.
@@ -100,7 +94,7 @@ Finally: when creating a pull request, both the primary dev and reviewers can do
 
 Not every PR requires a summary, but large ones with many changes should offer a reviewer a glimpse of major changes. Significant chunks of code may have been entirely overhauled and it may not be apparent to a reviewer how all the pieces fit together. A reviewing dev should be building and examining your code anyways, but offering insight into what changes were made and why can help resolve confusion for someone who hasn't been living with your code for a week.
 
-<Figure src="images/pr-description.png" alt="A pull request in Gitea. The description field contains a list of changes, such as \"Moving all the classes in Package A to Package B.\" ">
+<Figure src="images/pr-description.png" alt='A pull request in Gitea. The description field contains a list of changes, such as "Moving all the classes in Package A to Package B." '>
 Not every pull request needs this level of detail, but this was a big change.
 </Figure>
 

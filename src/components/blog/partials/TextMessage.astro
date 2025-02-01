@@ -1,0 +1,34 @@
+---
+interface A {
+	send: boolean;
+}
+
+interface B {
+	receive: boolean;
+}
+
+type Props = A & B;
+
+const { send, receive } = Astro.props;
+
+const flexdir = (send && "flex-row-reverse") ?? (receive && "flex-row");
+const textColor = (send && "text-textColor") ?? (receive && "text-bgColor");
+const bgColor = (send && "bg-accent") ?? (receive && "bg-accent-2");
+const edgeStyle = (send && "send") ?? (receive && "receive");
+---
+
+<div class:list={["flex", flexdir, "mt-4"]}>
+	<div class:list={[bgColor, textColor, edgeStyle, "p-2", "rounded-xl", "indent-0", "max-w-[75%]"]}>
+		<slot />
+	</div>
+</div>
+
+<style>
+	.send::before {
+		border-inline-end: 1em solid transparent;
+	}
+
+	.receive::before {
+		border-inline-start: 1em solid transparent;
+	}
+</style>

@@ -38,7 +38,7 @@
 			".astro": true
 		},
 		"terminal.integrated.defaultLocation": "view",
-		"terminal.integrated.cwd": "${workspaceFolder}",
+		"terminal.integrated.cwd": "${workspaceFolder:Project}",
 
 		"[markdown]": {
 			"editor.wordWrap": "on"
@@ -64,15 +64,15 @@
 
 		"editor.formatOnSave": true,
 		"prettier.documentSelectors": ["**/*.astro"],
-		"prettier.prettierPath": "node_modules/prettier",
-		"prettier.configPath": "prettier.config.mjs",
+		"prettier.prettierPath": "../node_modules/prettier",
+		"prettier.configPath": "../prettier.config.mjs",
 		"editor.codeActionsOnSave": {
 			"source.organizeImports": "never",
 			"source.organizeImports.biome": "explicit",
 			"quickfix.biome": "explicit"
 		},
 
-		"typescript.tsdk": "node_modules/typescript/lib",
+		"typescript.tsdk": "${workspaceFolder:Project}/node_modules/typescript/lib",
 		"astro.content-intellisense": true,
 		// This is just to make tailwind class strings shorter visually
 		"[astro]": {

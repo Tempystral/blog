@@ -1,0 +1,14 @@
+---
+interface Props {
+	id: string;
+}
+
+const { id } = Astro.props;
+
+const source = `https://player.twitch.tv/?video=${id}&autoplay=false&parent=www.tempystral.live`;
+---
+<iframe
+  style="aspect-video w-full"
+  src={source}
+  allowfullscreen="true">
+</iframe>
