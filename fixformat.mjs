@@ -8,6 +8,7 @@ const patterns = {
 	figureCaption: /<Figure(.*)caption="(?<caption>[^"]+)"(.*)>/gm,
 	figureAlt: /<Figure(.*)alt="(?<alt>[^"]+)"(.*)>/gm,
 	resources: /^.*name:\s*(?<name>.*)$\n^.*src:\s*(?<src>.*)$\n/gm,
+	allResources: /\nresources:(?:\n(.+(name|src): .+\n)+)/gm,
 };
 
 try {
@@ -15,7 +16,7 @@ try {
 	const resources = [];
 	let results = "";
 
-	// Replace newlines in figures
+	// Replace newlines in figures to make matching nicer
 	results = await replaceInFile({
 		files: blogposts,
 		from: patterns.newlines,
@@ -42,9 +43,18 @@ try {
 				// Change name to src
 			});
 			console.log("Replacement results:", results);
+
+			// Remove resources
+			results = await replaceInFile({
+				files: blogposts,
+				from: patterns.allResources,
+				to: (match) => "",
+				dry: false,
+			});
 		}
 	});
 
+	// Replace figure shortcodes with preliminary tag, change name to src
 	results = await replaceInFile({
 		files: blogposts,
 		from: patterns.figureName,
@@ -52,6 +62,7 @@ try {
 		dry: false,
 	});
 
+	// Isolate the captions and move them around
 	results = await replaceInFile({
 		files: blogposts,
 		from: patterns.figureCaption,
@@ -59,6 +70,7 @@ try {
 			`<Figure ${before.trim()}${after.trim()}>\n${caption}`,
 		dry: false,
 	});
+
 	console.log("Replacement results:", results);
 } catch (error) {
 	console.error("Error occurred:", error);
