@@ -1,0 +1,38 @@
+---
+title: March Update
+date: 2023-03-23T20:22:00-04:00
+publishDate: 2023-03-25T12:22:00-04:00
+description:
+
+draft: false
+
+
+slug: march-update
+aliases:
+  - /posts/march-update
+
+# Lists
+keywords: []
+tags: []
+categories: [Personal]
+
+featuredImage:
+
+resources:
+  - 
+---
+
+I don't have much to write. I've been busy both at work and at home, and not getting good sleep lately, so my ability to write for this blog has been somewhat stunted. For the sake of my biweekly post challenge though, I'm forcing myself to write this update. There's some interesting things to write about anyways.
+
+# Riffing in Review
+A friend and I hung out last week, and we got to talking about [my last post]({{< ref "bad-art-part-2" >}}). I wasn't the happiest with it, in part because I had trouble communicating a key idea: That people should be able to talk about art and what they liked and why, or why not, to other consumers of art. My friend remarked that this was called "a review". Oops. I somehow totally missed that concept. I think that's the missing idea though - a review isn't critique, and it's not for the artist. A review is meant for consumers of art to prepare them for an experience they may or may not enjoy for various reasons. And I think in that sense, shows like Kusogrande or Mystery Science Theater 3000 straddle the line between review and critique. How they do so is a whole other conversation though.
+
+# Dwarves and Beats
+I have been playing Dwarf Fortress. It's pretty fun, although it's the most hectic management game ever. There's so much going on at once that I often start a task and only come back to it when I remember an hour later.
+
+I also got Hi-Fi Rush recently and played it on my stream. It's a spectacle fighter, similar to Devil May Cry, but with rhythm elements. Might be my game of the year, I genuinely enjoyed it from start to finish. It's flashy, fun, and the music is great.
+
+# Licenseathon 2023
+My annual speedrun marathon Licenseathon is coming up again this year. There are some elements of the process I always find frustrating, tiring even, but we have new technology this year and I'm excited to get it up and running. Licenseathon really needs more staff so I can stop juggling tasks. This year, I'm ditching my old overlay code and writing a new frontend interface in Vue.js, and the overlays are being redone as well. I'm aiming for a y2k-era Minidisc and Jet Set Radio kind of vibe. I might be setting myself up for failure, this style is a bit above my pay grade.
+
+That's all this time around - we'll see if I can get a more substantial post done for the next time.

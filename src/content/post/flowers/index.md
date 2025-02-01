@@ -1,0 +1,72 @@
+---
+title: Flowers
+date: 2024-06-02T18:17:47-04:00
+publishDate: 2024-06-02T20:14:47-04:00
+description: "Apparently I'm no longer a statistic"
+
+draft: false
+
+
+slug: flowers
+aliases:
+  - /posts/flowers
+
+# Lists
+keywords: [politics, flowers, gender]
+tags: [personal]
+categories: []
+
+featuredImage:
+
+resources:
+  - name: rose
+    src: photos/rose.jpg
+---
+{{< notice info "Info" >}}
+I've been having a pretty low-key year. I'd hoped to update this blog more throughout the year but it's been difficult to find something I want to write about. I need to focus less on polish and more on just writing. That said, I do have a brief topic for today.
+{{< /notice >}}
+
+## Apparently I'm no longer a statistic
+Today, I took a walk down to some local shops to get fresh air and some local goods. There's a nice coffee shop nearby who roast a fantastic espresso bean. I grabbed lunch at an Italian supermarket on the way back. Very good atmosphere in general. Then, I was approached by a woman holding a bag of flowers. She asked me if I had ever received a flower before, and I told her no, not that I could remember. She handed me one white rose from her bag, then said "You are no longer a statistic," and walked off.
+
+What? I was a little dumbfounded at first. Reading the tag on the flower, it said 88% of men never receive flowers during their lives. I thought for a minute about the intended meaning of this message, then stood up and tried to find the woman again, but she had vanished.
+
+I'm not sure what to make of this statement. To tell you the truth, I was a little insulted - A statistic? Nobody told me. Was I expected to know this? Was I expected to care? Be happy? So what if I receive a flower? So what if 88% of men haven't received flowers before? So what if I'm "no longer a statistic"? I need to break down all my thoughts on this topic and I can't promise they will make sense in order.
+
+{{< figure name="rose" command="Fit" options="720x600" caption="At least the flower is nice" alt="A white rose sits in a mason jar. The stem has a label affixed to it with twine. The label says \"Did you know... 88% of men never receive flowers until their funeral\"" >}}
+
+## People aren't numbers and that isn't how statistics work
+I generally reject the message that a person is a statistic when presented by activists or advertisements. People are not a collection of metadata, and treating them as such is dehumanizing. Even more so to say it to someone's face. I'm a collection of numbers in your eyes? Not a person, just one of 88% of un-flowered men?[^1] And should I be happy about no longer "being a statistic"? That's not how statistics work, they aren't random inequalities or outliers. Statistics are a _report_ of the data as it exists. 88% is not a particularly interesting percentage. What makes a data point noteworthy is how it is interpreted in the context of other factors.
+
+So what does it say that 88% of men have never received flowers? Not much. I could try to guess a deeper message - that men are the subject of affection less often than women - but that isn't actually stated on the flower's tag, nor was it what the woman said to me. If the point was to make a statement about _how_ men receive tokens of affection versus women, we might find some interesting results. We would probably find that, although many men would appreciate a thoughtfully-assembled bouquet of flowers, there is simply not a tradition for such a thing in the west, or that men prefer different tokens of affection. But this is speculation - the message was not that deep. The message was about receiving flowers, and the act was giving me a flower.
+
+The focus on statistics - even a very shallow one - suggests that this was a statement about equality. Flowers were given not because men _want_ flowers but because an imbalance exists, and that's obviously what equity is about, right? The fact 88% of men haven't received flowers isn't notable because of a deeper cultural trend of not showing affection towards men or because of toxic masculinity driving men away from anything perceived as feminine, no. It's notable because it's 88%, which is implied by context to be higher than whatever number women have. That is the only conclusion I can reach.
+
+## That's not why we give flowers
+I think it would be fantastic to receive flowers, but I actually wanted to give this one back. I don't want to receive flowers as part of some numbers-evening scheme. If this is some trend where women are going around handing out flowers to random men, then what happens when we reach the logical conclusion of that plan? Then what? What is the point? In a future where 100% of men have received flowers, will this "problem" be solved? I would argue no, because **this fundamentally misses the point of giving someone flowers**. You shouldn't give someone flowers to meet a quota in the same way you shouldn't give a Christmas gift because you feel obligated - you should do it because you genuinely care about and love that person. The recipient enjoys the flowers not just for their own sake but because of what they represent. So what does this flower represent?
+
+This flower was given new meaning through its exchange. Normally you'd hope that the meaning was affection, but I don't know the woman who gave it to me, and she doesn't know me. The meaning you'd expect is entirely absent as a result. I can't pretend I feel particularly light about receiving it, especially with the political message attached. So does the rose take on the meaning on its label, the message about men receiving flowers? I don't think so, or at least it's not the message communicated to me. The message this rose communicates is one about equity. It says to me not that I deserve to be the subject of affection, but that I deserve to be the subject of a balancing act, a rose given for the sake of balancing some cosmic scale rather than actually doing good.
+
+## That's not what equity is about
+Equity is a good idea. People in society should have adequate and equal opportunity to pursue the good in life. There is a lot of discourse about how to enact an equitable society and a lot of modern liberal politics is about attempting to address inequity in the world. However, at some point equity became means _and_ the end.
+
+The point of an equitable society is not equality for its own sake. There's no inherent value in equality as a concept. It's a description of a state of being, it simply _is_. The value in equality among individuals in society is in how it enables each of us to carry out our fullest potential. We should be on roughly equal footing because it allows us to be the best versions of ourselves, not because equality is a virtue of its own.
+
+## I am going to complain about liberals
+This is a complaint I often have about liberals, and I say this as someone knee-deep in the left wing. It's important to be self-critical, and if there is one critique I would level most strongly at left-wing advocates, it's missing the forest for the trees[^2]. If 88% of men have never received a flower, that data is only meaningful if we give it meaning. Is it important that more men receive flowers? Is the point about flowers or about gender roles or about showing affection or about gift-giving in general? Any question that might impart real meaning to the flowers' message requires actual analysis, engagement with not just the entirely _arbitrary_ numbers at hand, but _why_ the numbers are what they are. You need to determine if there even is an issue to begin with. And then the message needs to be communicated in a way that means something.
+
+## Who is the flower even for?
+It's not for me, really. I think I've made it excruciatingly clear that the flower can't possibly be a token of affection for me. Its value is in maintaining a quota and spreading a message. So really, the flower is for the person who gave it. And that complete inversion of motive - well, you can't miss the point more than that.
+
+{{< notice note "A final thought" >}}
+Ultimately, receiving a flower for no reason is harmless. I'm not here to insult or to call the idea itself stupid. This experience simply gave me an opportunity to talk about a trend I've observed in a low-stakes context.
+
+This same thing happens often enough in actual high-stakes policymaking. Usually, if a left-wing politician promotes some idea which is poorly thought out or which has an unintended effect, Opposition rejects the concept outright, with self-same carelessness for context or background or analysis. It only furthers the self-foot-shooting and makes liberals an easy target.
+
+I don't want to deride the idea of giving men flowers, but I'd like to think that in a truly equitable world, we'd offer flowers to the people we like, and not out of obligation.
+{{< /notice >}}
+
+
+
+[^1]: I am aware this is perilously close to "deflowered".
+[^2]: Or you might say missing the field for the flowers.

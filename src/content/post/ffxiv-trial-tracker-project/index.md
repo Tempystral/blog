@@ -1,0 +1,202 @@
+---
+title: Making a webapp is hard (without a framework (but it doesn't have to be))
+date: 2023-01-21T15:36:45-05:00
+description: ''
+
+draft: true
+
+ # This will have to be adjusted to support page bundles, since the slug only captures the filename, and not the folder name
+slug: ffxiv-tracker-part-1
+aliases:
+  - /posts/ffxiv-tracker-part-1
+
+# Lists
+keywords: []
+tags: []
+categories: []
+
+resources:
+  - name: coerthas-central-highlands
+    src: images/coerthas-central-highlands.png
+---
+
+# The Start of the Ruination
+Around September of 2021, I got sucked into playing Final Fantasy XIV. It's good. Really good! Good enough to warrant another blog post, because I have a lot to say about the game and none of it belongs in this article. No, this is about trying to build a small website for my friends and I.
+
+The goal was to create a small web application to track our progress through the game's tougher content: Extreme Trials and Savage Raids. We had been using a quick-and-dirty MS Paint solution for a bit, crossing off bosses as we went, but I wanted something _interactive_, something _dynamic!_ In doing so I awoke the leviathan that is "making a webapp", a frustrating and at times downright hateful process. The goal of this blog post will be to document every single beginner mistake I made on the path to producing this small website, and hopefully how I overcame them.
+{{< figure name="coerthas-central-highlands" alt="Looking out over Coerthas Central Highlands during a blizzard" caption="Looking out over Coerthas Central Highlands during a blizzard" >}}
+
+- Core issues:
+  - JS has had a lot of revisions, each with their own rules (in addition to TypeScript, which has its own)
+    - In particular, promises have been reimplemented multiple times. You can use async/await, promise chaining, or callbacks, and some modules have their own implementations.
+    - This also means that resources online have the potential to be wildly out of date, sometimes only within a few short years.
+  - To my eyes, many frameworks and libraries online have poor documentation. It's not always clear to me how to use them.
+    - This is made worse when you're attempting to use a tool which integrates with another, which may interact in unpredictable ways that the developer is expected to figure out.
+    - A good example is Pug and Vue: Pug doesn't document its plugin API anywhere, and Vue doesn't document the ways it's modified its Pug compiler (no substitution strings, for example)
+      - This makes it very difficult to troubleshoot
+  - JS in a browser and JS in Node have different rules
+    - This one still bothers me, and I think it's absolutely absurd that we have to use bundlers because of how web servers serve data.
+
+
+# Getting off on the wrong foot
+
+A significant amount of grief came from my naïve assumption that I could simply build a website the way I had in the past: Create a set of pages, add some JavaScript, pretty it up with CSS, and that would be it. I looked around for a guide to building a barebones webapp to get an idea of what was considered "current", without resorting to using some big application framework.
+I found a [beginner's guide](https://auth0.com/blog/create-a-simple-and-stylish-node-express-app/) that looked reasonable, using template engine [PugJs](https://pugjs.org) and server library [Express](https://expressjs.com/) and set myself to work.
+
+### *Problem 1: This guide uses CommonJS modules*
+Actually, a lot of stuff does, but the new way of doing things is to use ECMAScript Modules (ESM). I changed over to ESM, which was fortunately as simple as placing `"type": "module"`  in my package.json file. This lets me use the new ESM import/export system which is more flexible, but the difference in syntax still trips me up. There seems to be no consistent way to determine whether an old CJS module will require an `import { object }`, `import object` or `import * from module` statement.
+
+The next thing to do was build my homepage. This was straightforward! Pug has a nice simple format that makes it very quick to prototype a page, and css framework [Bulma](https://bulma.io/) made it fairly easy to style elements in a responsive way. I decided to use SASS over CSS, since I expected my data to involve a lot of nested and repeated objects, and I wanted that to be reflected in my stylesheet for easier editing.
+
+```js
+//- base.pug
+.view //- A dotted keyword denotes a class, like in CSS
+  .container.has-text-centered.is-max-desktop //- div is implied if not specified.
+    figure.image //- This has no preceding dot, so it's an html <figure> with class="image"
+      img(src=exp.image)
+  .content.tile.is-parent 
+    .columns.is-multiline
+      each collection in exp.collections //- Pug templates can iterate through vars
+        +duty-group-container(collection) //- and are extensible with mixins
+```
+
+# JSON is pretty handy
+The next step was to actually _get data_ into my webapp. This application is going to contain a lot of similar data packaged together into chunks, and I already knew I'd be able to iterate over that data with Pug. The question was, how to get it into my app? I don't know what the norm is for this, but I think I had a reasonable solution: JSON. I could use a database or some web API, but I wanted this site to be relatively lightweight. Also, JSON was literally designed to serialize JavaScript objects. It's in the name: JavaScript Object Notation.
+
+So the plan was to pull the data I want from the FFXIV API, manipulate it into something for my site, and load it on the server to populate my data. So, I created a script to scrape data about the game and used it to produce a JSON file that looks something like this:
+
+```JSON
+{
+  "collections": [
+    {
+      "title": "ARR Extremes",
+      "dutyType": "trial",
+      "duties": [
+        {
+          "name": "The Bowl of Embers",
+          "image": "The_bowl_of_embers_extreme_banner1.png",
+          "completed": false
+        }, ...
+      ]
+    }, ...
+```
+
+I actually have one for each expansion in the game, to avoid bloat. Once the data files are created, they're loaded into my app, deserialized as an object, and Pug can simply loop over that object to populate the contents of my webpage.
+
+<!-- Todo: Move this to the end? -->
+# JavaScript itself is pretty alright
+For what it's worth, I actually didn't mind coding in JavaScript. While writing my data-scraping script, I found a number of nice creature comforts that made the language pleasant to work in: I like the curly-brace object syntax; It's very cool that creating structured data doesn't require defining an entire class first. I also appreciate that the language has template strings, and that JSON is so easily converted from data to object. In most languages serialization is a measured and careful affair, but JSON just _works_ with JS. I'm sure experienced devs are looking at deeper, more arcane metrics of quality, but I appreciate these small creature comforts in a language.
+
+That's not to say I like everything about it; I wish it had native type checking, and I wish `number` wasn't so vague. I miss `int` and `float`. I _really_ wish `string`s weren't treated like numbers so casually by the interpreter, or vice-versa. And the default exception logging feels somewhat anemic. It may just be my inexperience but I regularly make what feel like syntax errors, and my code simply runs through or does nothing. I can't tell if it's because I'm writing valid code that does something _other_ than what I intended, or if there are errors and I'm not seeing them logged. Regardless, I feel a little hung out to dry when troubleshooting code, a feeling I don't have working in basically any other language. Even Python (also an interpreted language) gives me a proper stacktrace when I screw up.
+
+Overall though, I don't mind JavaScript from a pure code perspective. It's alright.
+
+<!-- TODO This bit seems out of place. Probably works better when talking about the structural changes made when moving to Vue -->
+
+As I worked, I made sketches in my notebook to help with certain things like styling and page layout. One particularly clever thing I figured out was a set of "scale factors" I could use to size elements the same at various viewport sizes. Bulma lets you use different numbers of columns for some elements based on the viewport width. I wanted to maintain a general size and shape in my bottom-level elements, and I found that there was an ideal multiple for each viewport width which made my columns feel consistent.
+
+FIGURE; Description: The scale factor of a fullhd page is 24, so a 12-column container should have 2-column contents. If you made the container 6 cols, the contents would be 4 cols wide and look the same.
+
+At the same time, I added some express routes and updated my templates to let me view multiple expansions at once or just one at a time. I was feeling pretty good about myself!
+
+<!-- TODO IF you cut out the previous part, you can segue nicely from sweet-talking JS to shit-talking it -->
+# The Ruination
+It was time to do clientside JS. Up until this point, I had solved a number of problems on my own with a combination of Google-fu and some good guesses. This however was a different beast.
+
+Prior to this project, I had worked with JavaScript only a few times: I fixed up a former master's project for my own uses, and built a NodeCG bundle for a speedrun event I ran, plus a handful of additions to static webpages here and there. In the most complex cases, the backend work was done for me, and I was working in an environment where all the relevant functions and data were available. All I had to do was code the tool I wanted. In this circumstance, things were different.
+
+<!-- TODO: This ended up being so inconsequential, and I figured out the answer immediately. This can probably be removed. -->
+### *Problem 2: Wait, how do you communicate with the server?*
+I work primarily with Java in my day job (Yes, go ahead and boo, I'm right there with you) and I have some familiarity with client-server interaction as a result. With a JavaBean-based project, your clientside code communicates with the server by performing a JNDI lookup, getting a reference to the Bean running on the server, and performing Remote Method Invocation to execute code.
+```Java
+try {
+  Properties p = new Properties();
+  p.setProperty(Context.INITIAL_CONTEXT_FACTORY, Constants.CTX_FACTORY);
+  p.setProperty(Context.PROVIDER_URL, Constants.SERVER_URL);
+
+  Context ctx = new InitialContext(p);
+  MyBeanRemote bean = (MyBeanRemote) ctx.lookup("env/org/business/MyJavaBean");
+} catch (Exception e) { ... }
+```
+At least, that's how _my_ work environment is. This is handy for say, accessing a database not visible to the frontend, and it's easy to use because you can just _call_ this remote object and pretend it's local.
+
+```Java
+ClientData cd = bean.retrieveClientData(clientid);
+```
+
+**That's not how JavaScript works.** JavaScript wants you to make HTTP requests, so I had to learn how to do that.
+
+### *Problem 3: Browser JavaScript and Node JavaScript are different*
+> (And everyone just assumes you know that)
+
+This is the point at which my limited experience with JavaScript really shows. I decided to write the code that draws an X over a boss when a user completes an objective. Unsure of my options, but knowing I wouldn't want to saddle users with lots of images, I landed on SVG. It's pretty inexpensive to draw and store, but I'm a total beginner. Maybe there's a JS library that will help me draw it, ideally with a cool brush or pen effect. Well as luck would have it, [Brushstroke](https://github.com/lmgonzalves/brushstroke) is exactly that!
+
+But how to get it into my project?  I expected things to be as simple as sticking my code in a few files under a `/public` directory (as I've done for this website). But I'd only done this for my own code in the past; I had no clue how to get external libraries into my project for clientside development. Copying files into `/public/js` hardly seemed like the right answer when I was sitting on a package manager. Surely it's as simple as `import`ing the library, like I did in the server.
+
+```
+Uncaught SyntaxError: import declarations may only appear at top level of a module
+```
+What? It _is_ at the top of the module! Where else would I import my code?
+
+It turns out this was a fairly simple fix: Just mark the script as a module in the html file. Where you would normally put `type="text/javascript"` you write `type="module"`.
+```js
+script(type="module" src="../public/js/app.js" defer) // <script> declaration with PugJS
+```
+Apparently this is a somewhat recent feature, so I'm glad it exists now, at least. With that resolved, I restarted my server and...
+```
+Loading module from “http://localhost:8888/public/js/brushstroke” was blocked because of a disallowed MIME type (“text/html”).
+```
+Wh-what? This error is even more baffling than the last. And it's not even _right_! It's not that the MIME type is wrong, it's that the file can't be found _at all_. But at least I know why.
+
+{{< figure src="/posts/ffxiv/old-static.png" class="floatright img-container" alt="My static directory" >}}
+
+When making a website, it's common to have a `static` or `public` folder holding your assets. Any [local image](/uploads/images/cover-art/Socks_Rocks_the_Hill.jpg) or font or indeed, the javaScript for the theme switcher button in the bottom right corner of this page is in my static directory. My `node_modules` directory isn't being forwarded to the client like `public` and I don't need to be told that's a bad idea. Of course, I had already come to this conclusion earlier when I thought I might need to copy the Brushstroke library into my `public/js` folder. I already knew `node_modules` wouldn't be visible to the browser.
+
+Well how the hell do you get modules into browser code? There's no way everyone just writes vanilla JS on their clientside apps. I know they don't.
+
+The answer, by the way, is you use a bundler.
+
+At this point, I was recommended to use [Vite](vitejs.dev). Vite is a bundler, but it's also a lot of other things including a dev server, and to be frank, I've given up trying to understand all the things it can do. It's very high-concept (to my eyes) and understanding the value in all its features requires the context of having used other bundlers like WebPack and Browserify, context I lack. However, I could understand that my code was being packaged to let me write browser JS without much hassle. Vite will intelligently build whatever dependencies are required of your application, meaning you can import and use code in browser scripts without worrying about the build process much. This was nice.
+
+However, I had an app that looked like this:
+
+FIGURE
+
+with an express server serving PugJS template files, and now I didn't understand how to get an app that operated on similar principles with Vite. There were Pug plugins, there was express integration, and I ultimately did not understand how to get them to work together. Vite seems to operate on wholly different principles from the barebones project I began with. I then also started to realize that many projects separated their server and client components into separate projects (often not even in the same repository) and
+
+At this point I was mad. Actually, I was mad the entire long weekend. I knew exactly what I wanted to make, and I had _already done_ most of the frontend. The last thing I wanted to do was rewrite my code to use some other framework like Vue or React just so I could receive support.
+
+# Part 3: I rewrote my project in Vue
+
+One consistent through-line I'm finding as I work on this project is there is almost no comprehensive documentation about anything. Vue and Mozilla have solid docs, but they're about the only ones. Vite's documentation is exceptionally high-level, and assumes you know about concepts like bundling already.
+
+It's true that I've jumped into the deep end on this project, and that a good part of the difficulty is coming from the fact that I'm a beginner scraping by with only the street smarts that come from programming in other languages. This would undoubtedly be less frustrating if I had more experience. But that's why I'm writing this; 
+
+But maybe my project doesn't need a server. Honestly the only reason it needs one would be to fetch the json for saving and I don't even necessarily need to do that; The actual data worth saving is just the IDs, so I could feasibly construct a brand-new json file in the client as the user interacts with things.
+
+<!-- TODO: Go through old commits from after you moved to vue and describe the setup process and some difficulties working with the framework -->
+
+May 30/31
+Pinia has solved some of my woes. I spent a lot of time trying to figure out how to propagate data up the chain before I realized it was a meaningless exercise. In my mind, I'd store a structure similar to the original, but only containing IDs and which goals had been completed. Then any time the data object was updated, changes would propagate down the chain and be rendered differently in the Trial/Raid component. Unfortunately, I had a hard time trying to figure out how to save the data in that format. Because the duties don't know which collection or expansion they belong to, I'd have to perform a bunch of searches on the original data which seemed inefficient.
+
+The solution I found was just to ignore the data above the level of each duty; Sure, some of it might appear on one page but not another, but the data itself isn't changing, just which slice of the data is selected. The only data that's actually changing are the trials and raids. So, I defined a store that would store and load just duty-related data.
+
+I'm not sure how to best handle the goals within each duty. It may be another store which interacts with the first, maybe not. It'll have to tie into the UI component for goals somehow.
+
+I've also come across [this blogpost](https://mariusschulz.com/blog/the-unknown-type-in-typescript) in a search to solve TypeScript's stubbornness with the unknown type. It lists reading JSON from localstorage as an example of the problem, and that's exactly what I'm attempting to do.
+
+Also, define a new type to encapsulate the Pick type so a) you don't have to update your type annotations in multiple places when our data store's complexity grows, and b) to get around some of the messiness of annotating with a Pick type
+
+June 1: How the hell did that happen?
+Note: You sometimes need to write return and sometimes you don't. I always guess wrong.
+Found a fun bug after I got the data load working: After a reload, the refs on a page get reset to their initial values, which I had set as false. Because the `checked` property is what's used for the button interaction, it wasn't reacting on the first click for any given trial. Solution: set the ref to be the value retrieved from Pinia, which will be false if the given duty is not in the store.
+
+After work today I got some asset import issues worked out and deployed to Netlify. I also resolved a bug where a duty wouldn't be unmarked after clearing settings by changing up my "markDone" method to make inferences about the state of stored data, which let me remove the "checked" boolean causing the problem. Now the visuals are entirely driven by stored data.
+I did a similar thing with the raid data. Because the raid buttons won't have their own components, I have to be careful when adding effects or DOM elements, since they can duplicate across the iterator. For example, the way the shimmer effect is written for Trials doesn't work when you stick it on an element in an iterator, since each element being iterated over will get applied the same value. You have to make sure anything under the iterator is being checked by some value below that line. E.g. `for i in items` -> elements based on i should reference properties of i because that's effectively their new "local" variable scope. Stuff like refs at the top of the action are effectively global.
+
+June 7th
+Having basically finished the main functionality of the site, I now want to implement some user settings.
+- I put duty collections into `details` elements and made their `summary` tags the heading of each. This will let people show or hide the content at will, and I'd like to have users pick whether they are open or closed by default. Some users will want potential spoilers covered up until they reach particular content.
+- I created a store for user preferences and started adding code to my DutyContainer file. However, I can't just do the same thing here as with my duties, opening and closing the details via the stored data. The reason is I have an animation that needs to play on open and close, and this doesn't trigger when the state is changed directly. So the `open` property can't be v-bound.
+
+This is where computed properties come in. I can calculate the state of a details container in my script setup and then use it as a variable instead of trying to call a method, which is giving me problems.
