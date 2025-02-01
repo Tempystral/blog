@@ -2,7 +2,7 @@
 title: March Update
 date: 2023-03-23T20:22:00-04:00
 publishDate: 2023-03-25T12:22:00-04:00
-description:
+description: ""
 
 draft: false
 
@@ -16,10 +16,9 @@ keywords: []
 tags: []
 categories: [Personal]
 
-featuredImage:
-
-resources:
-  - 
+coverImage:
+  src: undefined
+  alt: ""
 ---
 
 I don't have much to write. I've been busy both at work and at home, and not getting good sleep lately, so my ability to write for this blog has been somewhat stunted. For the sake of my biweekly post challenge though, I'm forcing myself to write this update. There's some interesting things to write about anyways.

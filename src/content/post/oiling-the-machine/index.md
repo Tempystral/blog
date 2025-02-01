@@ -1,30 +1,17 @@
 ---
 title: Oiling the Software Dev Machine
-date: 2023-01-14T16:49:42-05:00
+publishDate: 2023-01-14T16:49:42-05:00
 description: 'But not in a hustle culture kind of way'
 
 slug: oiling-the-machine
 
-featuredImage: uploads/featured/code-header.jpg
-
+coverImage:
+  src: public/images/featured/code-header.jpg
+  alt: ""
 # Lists
 keywords: [git, jira, coding, version control, oiling the machine, project management]
 tags: [git, programming]
 categories: [Software Development]
-
-resources:
-- name: a bad pull request
-  src: images/a-bad-pull-request.png
-- name: a good pull request
-  src: images/a-good-pull-request.png
-- name: bad branches
-  src: images/bad-branch-names.png
-- name: good branches
-  src: images/good-branch-names.png
-- name: resolved issue
-  src: images/resolved-comment.png
-- name: pull request description
-  src: images/pr-description.png
 ---
 
 {{< details "### A quick site update" open >}}
@@ -52,13 +39,17 @@ At my job, we often run into situations where we want to reference code changes 
 
 <--->
 
-{{< figure name="bad branches" alt="Two git branches named \"minor fixes\" and \" sdz-179\"." caption="What are these branches for? What are we changing here?">}}
+<Figure src="images/bad-branch-names.png" alt="Two git branches named \"minor fixes\" and \" sdz-179\".">
+What are these branches for? What are we changing here?
+</Figure>
 
 {{< /columns >}}
 
 {{< columns >}}
 
-{{< figure name="good branches" alt="A pair of git branches named \"sdz908-internal_logging_cleanup\" and \"SDZ-861__Upload_Info_Alerts\"." caption="I may not be working on these changes, but I have a pretty good idea of what's being changed" >}}
+<Figure src="images/good-branch-names.png" alt="A pair of git branches named \"sdz908-internal_logging_cleanup\" and \"SDZ-861__Upload_Info_Alerts\".">
+I may not be working on these changes, but I have a pretty good idea of what's being changed
+</Figure>
 
 <--->
 
@@ -70,7 +61,9 @@ This may seem obvious, but when creating a new branch, a good name is critical. 
 
 A clear and concise commit message helps developers keep track of what work has been performed in a branch, and when that work was done. A commit that reads "Removed unused getUserInfo() method" lets a reader easily pinpoint that specific change during review. A good comment also offers context for a change. Some code changes have a non-obvious effect, meaning a good comment can give a reader insight into why a change was made.
 
-{{< figure name="a good pull request" alt="A Gitea pull request for an emergency fix. The title contains the ticket IDs and there is a brief description of what fixes were made." caption="This PR clearly lists all the information you need to know at a glance." >}}
+<Figure src="images/a-good-pull-request.png" alt="A Gitea pull request for an emergency fix. The title contains the ticket IDs and there is a brief description of what fixes were made.">
+This PR clearly lists all the information you need to know at a glance.
+</Figure>
 
 Comments like "Review changes" or "fixes" require a reader to examine the change just to understand what was done, which takes time and mental resources away from the review process itself. The whole point of storing messages with each commit is to reduce the mental load on developers, so make use of them in your team!
 
@@ -85,7 +78,9 @@ Early on in my current work project, there were a number of instances where a de
 I'm guilty of getting into the zone with my work and forgetting to commit changes, but it's something I try to be mindful of. If you're attentive to your progress and break up your work into atomic tasks, you can avoid this scenario and make your changes much easier to follow.
 <!-- TODO Not sure about this paragraph - consider text flow -->
 
-{{< figure name="a bad pull request" alt="A pull request containing 63 changed files with a title that does not convey what was changed. The description contains only a list of Jira tickets and a few hints at their contents." caption="Actually, it was worse than that. It was 63 files spread across three tickets." >}}
+<Figure src="images/a-bad-pull-request.png" alt="A pull request containing 63 changed files with a title that does not convey what was changed. The description contains only a list of Jira tickets and a few hints at their contents.">
+Actually, it was worse than that. It was 63 files spread across three tickets.
+</Figure>
 
 ### Avoid scope creep
 
@@ -105,7 +100,9 @@ Finally: when creating a pull request, both the primary dev and reviewers can do
 
 Not every PR requires a summary, but large ones with many changes should offer a reviewer a glimpse of major changes. Significant chunks of code may have been entirely overhauled and it may not be apparent to a reviewer how all the pieces fit together. A reviewing dev should be building and examining your code anyways, but offering insight into what changes were made and why can help resolve confusion for someone who hasn't been living with your code for a week.
 
-{{< figure name="pull request description" alt="A pull request in Gitea. The description field contains a list of changes, such as \"Moving all the classes in Package A to Package B.\" " caption="Not every pull request needs this level of detail, but this was a big change." >}}
+<Figure src="images/pr-description.png" alt="A pull request in Gitea. The description field contains a list of changes, such as \"Moving all the classes in Package A to Package B.\" ">
+Not every pull request needs this level of detail, but this was a big change.
+</Figure>
 
 ### Write helpful comments
 
@@ -115,7 +112,9 @@ As the branch developer, respond to reviews with comments that indicate a resolu
 
 Be timely when resolving comments! Though, it's worth discussing with your team who should be responsible for resolving comments as fixes are made. In my team, I typically like to resolve comments myself as I make changes. If a comment needs to be re-opened, it can be. However, some may prefer for the commenter to resolve issues after they've had the chance to look over the requested changes. Ultimately it's up to you, but either way it can help to keep everyone in sync.
 
-{{< figure name="resolved issue" alt="A Gitea comment from a coworker asking me to refactor a variable. I have replied with a confirmation as well as the hash of the commit containing the requested change." caption="I find that marking the commit of each change makes it easier to perform code review." >}}
+<Figure src="images/resolved-comment.png" alt="A Gitea comment from a coworker asking me to refactor a variable. I have replied with a confirmation as well as the hash of the commit containing the requested change.">
+I find that marking the commit of each change makes it easier to perform code review.
+</Figure>
 
 ### Review code thoroughly
 

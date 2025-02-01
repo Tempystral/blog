@@ -1,7 +1,6 @@
 ---
 title: One Year Later
-date: 2023-12-03T16:51:48-05:00
-publishDate:
+publishDate: 2023-12-03T16:51:48-05:00
 description: 'One year later, how is the blog doing?'
 
 draft: false
@@ -15,10 +14,9 @@ keywords: []
 tags: [personal, update]
 categories: []
 
-featuredImage:
-
-resources:
- - 
+coverImage:
+  src: undefined
+  alt: ""
 ---
 Oh boy, a blog post! Haven't done one of these in a minute. Apologies for the radio silence, I've been... well, busy. Let's get into it:
 # The year of doing stuff
@@ -54,7 +52,7 @@ In the summer I discovered a note-taking tool called Obsidian. I've mostly used 
 This year, I picked up a number of new projects:
 ### Fursuit head
 After CanFURence I was inspired to build my own raccoon fursuit head to match the tail I bought. It was a pretty massive undertaking, and the work has really only just started. I've assembled some of the head using foam but work has really just started. Pretty early into the project I realized I had no idea how to create a sewing pattern or how to even use a sewing machine properly, so I set the project aside and took some lessons.
-### Sewing 
+### Sewing
 The sewing lessons were lots of fun! They were held at a local independent school called The Green Needle, which I would recommend to anyone interested in learning to sew. It was pretty far from my apartment, further than I'd like, but the insight and experience gained from taking the class in person was invaluable. The classes were a lot of fun too. I made pyjamas out of a wonderful raccoon-themed fabric I got from Fabricland and I've been wearing them for weeks now. They're great.
 
 {{< gallery match="images/sewing/*" thumbnailResizeOptions="600x600 q90 Lanczos" embedPreview=true >}}

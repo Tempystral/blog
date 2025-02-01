@@ -1,6 +1,6 @@
 ---
 title: Making a webapp is hard (without a framework (but it doesn't have to be))
-date: 2023-01-21T15:36:45-05:00
+publishDate: 2023-01-21T15:36:45-05:00
 description: ''
 
 draft: true
@@ -14,17 +14,15 @@ aliases:
 keywords: []
 tags: []
 categories: []
-
-resources:
-  - name: coerthas-central-highlands
-    src: images/coerthas-central-highlands.png
 ---
 
 # The Start of the Ruination
 Around September of 2021, I got sucked into playing Final Fantasy XIV. It's good. Really good! Good enough to warrant another blog post, because I have a lot to say about the game and none of it belongs in this article. No, this is about trying to build a small website for my friends and I.
 
 The goal was to create a small web application to track our progress through the game's tougher content: Extreme Trials and Savage Raids. We had been using a quick-and-dirty MS Paint solution for a bit, crossing off bosses as we went, but I wanted something _interactive_, something _dynamic!_ In doing so I awoke the leviathan that is "making a webapp", a frustrating and at times downright hateful process. The goal of this blog post will be to document every single beginner mistake I made on the path to producing this small website, and hopefully how I overcame them.
-{{< figure name="coerthas-central-highlands" alt="Looking out over Coerthas Central Highlands during a blizzard" caption="Looking out over Coerthas Central Highlands during a blizzard" >}}
+<Figure src="images/coerthas-central-highlands.png" alt="Looking out over Coerthas Central Highlands during a blizzard">
+Looking out over Coerthas Central Highlands during a blizzard
+</Figure>
 
 - Core issues:
   - JS has had a lot of revisions, each with their own rules (in addition to TypeScript, which has its own)
@@ -54,7 +52,7 @@ The next thing to do was build my homepage. This was straightforward! Pug has a 
   .container.has-text-centered.is-max-desktop //- div is implied if not specified.
     figure.image //- This has no preceding dot, so it's an html <figure> with class="image"
       img(src=exp.image)
-  .content.tile.is-parent 
+  .content.tile.is-parent
     .columns.is-multiline
       each collection in exp.collections //- Pug templates can iterate through vars
         +duty-group-container(collection) //- and are extensible with mixins
@@ -65,7 +63,7 @@ The next step was to actually _get data_ into my webapp. This application is goi
 
 So the plan was to pull the data I want from the FFXIV API, manipulate it into something for my site, and load it on the server to populate my data. So, I created a script to scrape data about the game and used it to produce a JSON file that looks something like this:
 
-```JSON
+```json
 {
   "collections": [
     {
@@ -108,7 +106,7 @@ Prior to this project, I had worked with JavaScript only a few times: I fixed up
 <!-- TODO: This ended up being so inconsequential, and I figured out the answer immediately. This can probably be removed. -->
 ### *Problem 2: Wait, how do you communicate with the server?*
 I work primarily with Java in my day job (Yes, go ahead and boo, I'm right there with you) and I have some familiarity with client-server interaction as a result. With a JavaBean-based project, your clientside code communicates with the server by performing a JNDI lookup, getting a reference to the Bean running on the server, and performing Remote Method Invocation to execute code.
-```Java
+```java
 try {
   Properties p = new Properties();
   p.setProperty(Context.INITIAL_CONTEXT_FACTORY, Constants.CTX_FACTORY);
@@ -120,7 +118,7 @@ try {
 ```
 At least, that's how _my_ work environment is. This is handy for say, accessing a database not visible to the frontend, and it's easy to use because you can just _call_ this remote object and pretend it's local.
 
-```Java
+```java
 ClientData cd = bean.retrieveClientData(clientid);
 ```
 
@@ -148,9 +146,10 @@ Loading module from “http://localhost:8888/public/js/brushstroke” was blocke
 ```
 Wh-what? This error is even more baffling than the last. And it's not even _right_! It's not that the MIME type is wrong, it's that the file can't be found _at all_. But at least I know why.
 
-{{< figure src="/posts/ffxiv/old-static.png" class="floatright img-container" alt="My static directory" >}}
+<Figure src="/posts/ffxiv/old-static.png" class="floatright img-container" alt="My static directory" >
+</Figure>
 
-When making a website, it's common to have a `static` or `public` folder holding your assets. Any [local image](/uploads/images/cover-art/Socks_Rocks_the_Hill.jpg) or font or indeed, the javaScript for the theme switcher button in the bottom right corner of this page is in my static directory. My `node_modules` directory isn't being forwarded to the client like `public` and I don't need to be told that's a bad idea. Of course, I had already come to this conclusion earlier when I thought I might need to copy the Brushstroke library into my `public/js` folder. I already knew `node_modules` wouldn't be visible to the browser.
+When making a website, it's common to have a `static` or `public` folder holding your assets. Any [local image](public/images/cover-art/Socks_Rocks_the_Hill.jpg) or font or indeed, the javaScript for the theme switcher button in the bottom right corner of this page is in my static directory. My `node_modules` directory isn't being forwarded to the client like `public` and I don't need to be told that's a bad idea. Of course, I had already come to this conclusion earlier when I thought I might need to copy the Brushstroke library into my `public/js` folder. I already knew `node_modules` wouldn't be visible to the browser.
 
 Well how the hell do you get modules into browser code? There's no way everyone just writes vanilla JS on their clientside apps. I know they don't.
 
@@ -170,7 +169,7 @@ At this point I was mad. Actually, I was mad the entire long weekend. I knew exa
 
 One consistent through-line I'm finding as I work on this project is there is almost no comprehensive documentation about anything. Vue and Mozilla have solid docs, but they're about the only ones. Vite's documentation is exceptionally high-level, and assumes you know about concepts like bundling already.
 
-It's true that I've jumped into the deep end on this project, and that a good part of the difficulty is coming from the fact that I'm a beginner scraping by with only the street smarts that come from programming in other languages. This would undoubtedly be less frustrating if I had more experience. But that's why I'm writing this; 
+It's true that I've jumped into the deep end on this project, and that a good part of the difficulty is coming from the fact that I'm a beginner scraping by with only the street smarts that come from programming in other languages. This would undoubtedly be less frustrating if I had more experience. But that's why I'm writing this;
 
 But maybe my project doesn't need a server. Honestly the only reason it needs one would be to fetch the json for saving and I don't even necessarily need to do that; The actual data worth saving is just the IDs, so I could feasibly construct a brand-new json file in the client as the user interacts with things.
 

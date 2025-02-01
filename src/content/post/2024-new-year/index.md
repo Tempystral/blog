@@ -10,10 +10,6 @@ aliases:
 keywords: []
 tags: []
 categories: []
-
-resources:
-  - name: espresso
-    src: images/espresso.jpg
 ---
 #  It's a new year!
 And with it come fresh opportunities. Last year, I dedicated myself to experiencing new things and broadening my horizons. I'd like to keep that up, so here's a quick outline of my goals for 2024:
@@ -22,7 +18,9 @@ I'd like to write in the blog more - I won't dedicate myself to bi-weekly essays
 
 I know for certain that I'll be writing about coffee; I got an espresso machine for Christmas and I'm working on perfecting my technique! So I'll be sharing that as I learn. I also intend to dig more into bad media and speedrunning as topics. Eventually I'll update the blog's theme as well. I'd like the site to be a little more functional.
 
-{{< figure name="espresso" caption="It's an entry-level machine but I'm enjoying the tinkering process. It's surprisingly tough to make a good coffee!" alt="My new Delonghi Dedica Arte espresso machine" >}}
+<Figure src="images/espresso.jpg"alt="My new Delonghi Dedica Arte espresso machine">
+It's an entry-level machine but I'm enjoying the tinkering process. It's surprisingly tough to make a good coffee!
+</Figure>
 
 ## 2. Games and Streaming
 A few goals here:

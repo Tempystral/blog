@@ -15,19 +15,11 @@ keywords: []
 tags: []
 categories: []
 
-featuredImage:
-
-resources:
-  - name: fake-id
-    src: images/id.png
-  - name: a world of private banking
-    src: images/wopb.png
-  - name: bofa 1
-    src: images/bofa1.png
-  - name: bofa 2
-    src: images/bofa2.png
+coverImage:
+  src: ""
+  alt: ""
 ---
-{{< details "## Update" open>}}
+  {{< details "## Update" open>}}
 I'm still hard at work on the Licenseathon layouts and my other projects, so this post will again be somewhat on the lighter side of things. I swear, I'm almost back to being able to do research and write longer thought pieces again!
 {{< /details >}}
 
@@ -95,7 +87,8 @@ And although he tried to get me back, I was quite satisfied with that (and feeli
 ## The Bank of America Tower at One Bryant Park...
 Possibly my favourite email template thus far came from someone claiming to be the Bank of America, or at least David G Leitch representing the Bank of America, whoever that is. It began with a bold, 16pt description of the BofA headquarters before each email. Apparently, it's located at One Bryant Park and stands 1200ft tall!
 
-{{< figure name="bofa 1">}}
+<Figure src="images/bofa1.png">
+</Figure>
 
 The rest of the email was very boring and didn't offer much to work with, so I instead focused on the broken image in the header. Was it perhaps a photo of this magnificent building? I had to know. I bit, asking for more details.
 
@@ -105,7 +98,8 @@ I'm following up on this - did you receive my email? I would love to hear more a
 
 (I had of course sent no such email; This was a transplant from another mailbox.)
 
-{{< figure name="bofa 2">}}
+<Figure src="images/bofa2.png">
+</Figure>
 
 How disappointing, it's just a broken logo. I was certain it would be the tower! That avenue shut off for now, I decided to sow confusion: There are lots of big words in this email, monitory and fiducary and... domiciliary? I'll be honest, I don't know what a fiduciary is and I don't think domiciliary is a word, so I replied asking for clarification... and pictures, if possible.
 
@@ -122,7 +116,8 @@ This regrettably short conversation came about via one "David Cheung", supposedl
 
 He didn't bite, so I caved in and opened the PDFs, after verifying that they were virus-free. (I'm kind of shocked that they were safe, to be honest. I have no clue why this scammer uses PDFs, it seems wildly less convenient than rich text.) In the attachments were a delightfully fake ID...
 
-{{< figure name="fake-id" alt="A poorly-photoshopped fake ID." >}} 
+<Figure src="images/id.png" alt="A poorly-photoshopped fake ID." >
+</Figure>
 
 ... as well as an exceptionally wordy proposal which promised me half of a large sum of money if I could only help him embezzle it from the account of a client who died upon flight MH370. Delightful! Scammers always are such wonderful individuals.
 
@@ -138,7 +133,7 @@ No greed;
 
 And a list of literally all the industries the scammer could think of;
 {{< text receive >}}
-my interest is to invest in the following sectors, Oil/Gas, construction, Real Estate, Stock Speculation and Mining, Transportation, Health Sector and Tobacco, 
+my interest is to invest in the following sectors, Oil/Gas, construction, Real Estate, Stock Speculation and Mining, Transportation, Health Sector and Tobacco,
 Communication Services, Agriculture Forestry & Fishing
 {{< /text >}}
 
@@ -168,7 +163,9 @@ I need to harmonize them with my records. PLEASE SEND THEM IMMEDIATELY YOU GET T
 
 And at this moment I had a perfect crown jewel of an image in my mind. This man lives in a _World of Private Banking_, he insists upon "no greed" and is searching for third parties to engage in _trials_ with him. And when I try to get more details, he curiously pushes me away. It's almost like this is a game to him! A game such as...
 
-{{< figure name="a world of private banking" alt="An edit of the World of Warcraft logo that reads \"The world of private banking\"" caption="I'm so upset I didn't get to use this joke" command="Crop" options="800x300">}}
+<Figure src="images/wopb.png" alt="An edit of the World of Warcraft logo that reads \"The world of private banking\""command="Crop" options="800x300">
+I'm so upset I didn't get to use this joke
+</Figure>
 
 I tried to stall so I could bring him back around to the goof:
 {{< text send >}}

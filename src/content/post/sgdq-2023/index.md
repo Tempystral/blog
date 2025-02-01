@@ -15,42 +15,9 @@ keywords: []
 tags: []
 categories: []
 
-featuredImage: /uploads/featured/plane.jpg
-
-resources:
-  - name: pinball-1
-    src: images/pinball/pinball-1.jpg
-  - name: pinball-2
-    src: images/pinball/pinball-2.png
-  - name: godzilla
-    src: images/pinball/pinball-godzilla.png
-  - name: ghostbusters
-    src: images/pinball/pinball-ghostbusters.png
-  - name: evil zone
-    src: images/tourneys/evilzone.jpg
-  - name: evil zone 2
-    src: images/tourneys/evilzone2.jpg
-  - name: streets
-    src: images/tourneys/streets.jpg
-  - name: YOW
-    src: images/travel/airport morning.jpg
-  - name: YUL
-    src: images/travel/montreal.jpg
-  - name: coffee
-    src: images/travel/coffee.jpg
-  - name: dalmatians
-    src: images/venue/102d.jpg
-  - name: backstage
-    src: images/venue/backstage.jpg
-  - name: project eden
-    src: images/venue/project eden.jpg
-  - name: gamestore-1
-    src: images/gamestore_1.jpg
-  - name: gamestore-2
-    src: images/gamestore_2.png
-  - name: sushi
-    src: images/sushi.mp4
-
+coverImage:
+  src: public/images/featured/plane.jpg
+  alt: ""
 ---
 
 Summer Games Done Quick has come and gone - time to talk about the trip!
@@ -64,7 +31,8 @@ Leading up to the event was honestly super stressful. I've been under some real 
 
 I also received some wireless earbuds with the phone so the trip served as a nice test run. I had the first generation from my old phone and wasn't impressed with the sound, feel, look, any of it. I've always seen wireless earbuds as a gimmick anyways so I just never used them. Well, the second generation is a big step up. They don't beat actual open-back headphones and I have some reservations about the safety of noise-cancelling technology, but the sound is genuinely good and they're comfortable to wear. A little bassy, but that's what you get with earbuds. Not bad!
 
-{{< figure name="coffee" alt="Me, sitting in the Ottawa airport watching the sun rise." command="Fit" options="640x720 webp q90 photo Lanczos" >}}
+<Figure src="images/travel/coffee.jpg" alt="Me, sitting in the Ottawa airport watching the sun rise." command="Fit" options="640x720 webp q90 photo Lanczos" >
+</Figure>
 
 # Arrival
 The first day of the trip was packed. I left early Saturday morning, barely getting any sleep so I wouldn't miss my flight. Left at 4am and got to watch the sun rise from the airport. All my flights were very straightforward, thank goodness. The only problem was mistiming my arrival by like two hours on the first day, so I ended up being the only person in line at security. I totally forgot the lines from last year were abnormal.
@@ -88,9 +56,12 @@ The first day of the event was fairly quiet - I got groceries at the local Targe
 
 That night, Flannelkat, Arborelia, PeaceEgg and I went to a pinball bar down the street. The place was packed and full of super good machines. Normally pinball isn't my thing but I had a blast anyways. There were some really good machines there, including a brand new Foo Fighters machine and a rare James Bond one.
 
-{{< figure name="pinball-1" alt="Myself, Flannelkat, and PeaceEgg standing around a James Bond pinball table" >}}
+<Figure src="images/pinball/pinball-1.jpg" alt="Myself, Flannelkat, and PeaceEgg standing around a James Bond pinball table" >
+</Figure>
 
-{{< figure name="pinball-2" caption="Apparently this table cost something like 20 grand" alt="A very cool James Bond-themed pinball table" >}}
+<Figure src="images/pinball/pinball-2.png"alt="A very cool James Bond-themed pinball table">
+Apparently this table cost something like 20 grand
+</Figure>
 
 <!-- - Marathon intro was great
 - First run was a blast as well
@@ -106,14 +77,20 @@ On Tuesday a bunch of folks got together to hit up a local game store, and the e
 
 {{< tweet 1663658093312442368 >}}
 
-{{< figure name="gamestore-1" command="Fill" options="720x720 bottom webp q90 photo Lanczos" >}}
-{{< figure name="gamestore-2" command="Fit" options="720x720 webp q90 photo Lanczos" >}}
+<Figure src="images/gamestore_1.jpg" command="Fill" options="720x720 bottom webp q90 photo Lanczos" >
+</Figure>
+<Figure src="images/gamestore_2.png" command="Fit" options="720x720 webp q90 photo Lanczos" >
+</Figure>
 
 One of the best parts of a GDQ is heading into the casual practice room and playing games with people, especially the ones you get from a local used game store. It was so hard to practice 102 Dalmatians while Passere was suffering with the Sea Monkeys playstation game (yeah, that exists). Jaxler got a game called Phix that another runner literally told him to return because it was so bad (it was fine) and Nestani picked up a game he described as "unplayable". So all around good picks in my books! If you don't pick up obscure trash, is it really a used game store haul?
 
-{{< figure name="dalmatians" caption="It was awesome meeting Passere (middle) in person this year!" alt="Myself, Passere, and Nestani playing 102 Dalmatians" >}}
+<Figure src="images/venue/102d.jpg"alt="Myself, Passere, and Nestani playing 102 Dalmatians">
+It was awesome meeting Passere (middle) in person this year!
+</Figure>
 
-{{< figure name="project eden" caption="Learning a janky PS2 game with PMCTrilogy" alt="Learning a janky PS2 game with PMCTrilogy" >}}
+<Figure src="images/venue/project eden.jpg"alt="Learning a janky PS2 game with PMCTrilogy">
+Learning a janky PS2 game with PMCTrilogy
+</Figure>
 
 I also had Culver's for the first time, which was... food, certainly. I dunno, I think folks from the midwest are overselling it. It's just burgers! Comparable to a Canadian McDonald's I feel like, but even at that the patties were really thin. Maybe if you're really into their old school fast food like pork roast sandwiches and mashed potatoes and gravy as a side, they're good, I can't think of the last time I saw those as options up here.
 
@@ -134,15 +111,20 @@ Wednesday and Thursday for me were dominated by tournaments. I got roped into pl
 
 There was also a SF6 launch tournament on Thursday, which was a blast even if I did get absolutely rocked. The game is very fun, I can't wait to play more of it. At one point Mike Uyama came up to me to ask specifically for help playing SF6, which I thought was very funny.
 
-{{< figure name="evil zone" >}}
+<Figure src="images/tourneys/evilzone.jpg" >
+</Figure>
 
-{{< figure name="evil zone 2" >}}
+<Figure src="images/tourneys/evilzone2.jpg" >
+</Figure>
 
-{{< figure name="streets" >}}
+<Figure src="images/tourneys/streets.jpg" >
+</Figure>
 
 Maybe my highlight of the week though was getting to set foot on the GDQ main stage for the first time so I could back up my buddy Jaxler on commentary for his Neopets: The Darkest Faerie speedrun. I did a casual playthrough recently and started learning the speedrun so I have some perspective on the differences between the casual and speedrun routes. The run went super well and I was really happy with our commentary, which was great. Unfortunately another runner got covid on Friday and we were told the mask-off option for the main stage was off the table. Shame, but I'm glad GDQ was prioritizing safety.
 
-{{< figure name="backstage" caption="I'm backstage!" alt="It's me backstage!" >}}
+<Figure src="images/venue/backstage.jpg"alt="It's me backstage!">
+I'm backstage!
+</Figure>
 </br>
 
 {{< youtube qf__wTI5nao >}}
@@ -170,7 +152,8 @@ The end of the event was bittersweet as always, but I couldn't be upset with how
 
 Still, my mood was high as I left the venue. The final day consisted of Brazilian barbeque with friends and then Mario Party 4 in a room with like a dozen people. It's funny to think of GDQ as an event you attend to not watch the runs, but for most of it I was hanging out with my friends.
 
-{{< figure name="YUL" >}}
+<Figure src="images/travel/montreal.jpg" >
+</Figure>
 
 The trip back went fine as well - a direct flight to Montreal and then a train ride home which were mostly just boring. I've definitely never been more relieved to sleep in my own bed again. All in all, I had a great time and I can't wait to go back to the next one. Most of all I'm feeling inspired to get back into speedrunning again, starting with Neopets and continuing with 102 Dalmatians. Maybe I'll even pick up Lunistice or give one of my classic games a shot! As with every year, feeling good to be part of the speedrunning community.
 

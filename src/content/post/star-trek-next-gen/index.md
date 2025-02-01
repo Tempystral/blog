@@ -1,7 +1,6 @@
 ---
 title: Star Trek Next Gen
-date: 2023-07-27T14:39:49-04:00
-publishDate:
+publishDate: 2023-07-27T14:39:49-04:00
 description: ''
 
 draft: true
@@ -16,10 +15,11 @@ keywords: []
 tags: []
 categories: []
 
-featuredImage:
-
+coverImage:
+  src: undefined
+  alt: ""
 resources:
-  - 
+  -
 ---
 
 - I like Star Trek

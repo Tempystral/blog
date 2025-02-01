@@ -13,35 +13,10 @@ keywords: []
 tags: [Art, Design]
 categories: [Projects]
 
-featuredImage:
-
-resources:
-  - name: brawlersworld
-    src: images/reference/brawlersworld.png
-  - name: cpu
-    src: images/reference/cpu.png
-  - name: no_carrier
-    src: images/reference/no_carrier.png
-  - name: orange
-    src: images/reference/orange.png
-  - name: jaber
-    src: images/reference/jaber.png
-  - name: wipeout
-    src: images/reference/W_WIPEOUT_01.jpg
-  - name: glyphs
-    src: images/mine/glyphs.png
-  - name: infopanel
-    src: images/mine/info_panel.png
-  - name: mainpanel
-    src: images/mine/main_panel.png
-  - name: sketch1
-    src: images/mine/sketch_1.jpg
-  - name: sketch2
-    src: images/mine/sketch_2.jpg
-  - name: layout
-    src: images/mine/layout.png
+coverImage:
+  src: ""
+  alt: ""
 ---
-
 Every year, I help run an online speedrunning event called Licenseathon. It's an event where speedrunners from across the internet get together to showcase their licensed game speedruns. We've been operating since 2019 and each year is better than the last. However, one element hasn't updated in a while: The presentation. I've been meaning to redesign the layouts for a while now, so the past few weeks have been dedicated to creating a new visual identity for the event.
 
 The existing layouts look fine, but they are a bit simple and I wanted to spice things up for this event. I decided to throw it back to the early 2000s with the _vectorheart_ design style - all angles, hard edges, straight lines, and flat colours. It's starkly minimalist in colour and form, but exceedingly maximalist in composition which I think is a fun contrast. I've always been a fan of the style so I did some digging for reference material. Huge thanks to the [Y2K Aesthetic Institute](https://twitter.com/y2k_aesthetic/) and sister account [Vectorheart](https://twitter.com/vectorheart/) for their cataloguing of reference material.
@@ -54,45 +29,57 @@ Some vectorheart pieces really lean into the deconstructed print layout look, us
 
 <--->
 
-{{< figure name="jaber" caption="Source: https://twitter.com/vectorheart/status/1530685349135110144" alt="alt" command="Fit" options="600x800" >}}
+<Figure src="images/reference/jaber.png"alt="alt" command="Fit" options="600x800">
+Source: https://twitter.com/vectorheart/status/1530685349135110144
+</Figure>
 
 {{< /columns >}}
 
 I'm particularly fond of this piece by [Laurent Doucet](deviantart.com/spritek) about... Oranges.
 
-{{< figure name="orange" caption="Source: https://twitter.com/vectorheart/status/1541572085876633601" alt="alt" command="Fit" options="600x800" >}}
+<Figure src="images/reference/orange.png"alt="alt" command="Fit" options="600x800">
+Source: https://twitter.com/vectorheart/status/1541572085876633601
+</Figure>
 
 ### 2. Digital graffiti
 Some works are stylized with angles and shapes meant to suit the aesthetic needs of that individual work, and often play with perspective using a limited palette and amorphous shapes. Chunks of readable text in these images tend to be plastered over big rectangles that break up the image, almost like a rendering error.
 
-{{< figure name="cpu" caption="Source: https://twitter.com/vectorheart/status/1516944807356100608" alt="The back of a blue-and-yellow CD case, adorned with jagged geometric patterns. A large white square containing track listings covers a third of the art." >}}
+<Figure src="images/reference/cpu.png"alt="The back of a blue-and-yellow CD case, adorned with jagged geometric patterns. A large white square containing track listings covers a third of the art.">
+Source: https://twitter.com/vectorheart/status/1516944807356100608
+</Figure>
 
 Some works like this one make use of gradients, which is somewhat evocative of the earlier _MetalHeart_ style. It definitely became more popular as time went on too.
-{{< figure name="no_carrier" caption="Source: https://twitter.com/vectorheart/status/1287944806635909121" alt="A pink-and-white geometric design for another piece of music" >}}
+<Figure src="images/reference/no_carrier.png"alt="A pink-and-white geometric design for another piece of music">
+Source: https://twitter.com/vectorheart/status/1287944806635909121
+</Figure>
 
 
 ### 3. Vectorheart shapes as frames
 Some works use vectorheart techniques as a physical tool to frame a subject or surround it with information. This is the technique I like most, and I think it's the most conducive to presenting information that's actually meant to be absorbed, if using this style.
 
-{{< figure name="brawlersworld" caption="I particularly like this modern take from brawlersworld - Source: https://brawlersworld.com/aoi" alt="A screenshot of a blue webpage with geometric patterns depicting a robot." >}}
+<Figure src="images/reference/brawlersworld.png"alt="A screenshot of a blue webpage with geometric patterns depicting a robot.">
+I particularly like this modern take from brawlersworld - Source: https://brawlersworld.com/aoi
+</Figure>
 
 
 Wipeout for the Playstation is my largest influence here. I love the way the art for these games communicates motion with just a few lines. The techniques at play are pretty simple too. The background looks complex, but it's actually just text shredded with erase at various thicknesses. There are also a number of elements which hearken back to radio and walkman iconography - which makes sense, seeing as one of Wipeout's selling points was the killer soundtrack. A number of words contain timekeeping symbols like `'` and `"`, or countdown numbers, perfect for a racing game. It's a smart design, and fits all three of the above themes I picked out earlier.
 
-{{< figure name="wipeout" caption="Source: https://www.thedesignersrepublic.com/wipeout" alt="Box art for Wipeout for the Playstation"
-  command="Fit" options="600x600 lanczos q100 png"
->}}
+<Figure src="images/reference/W_WIPEOUT_01.jpg"alt="Box art for Wipeout for the Playstation"  command="Fit" options="600x600 lanczos q100 png">
+Source: https://www.thedesignersrepublic.com/wipeout
+</Figure>
 
 # Making the layouts
 Taking the above sources as inspiration, I started to learn how to work with my tools by recreating some shapes from the reference material. This helped me break down the images into their constituent parts and better understand their construction. Once I felt like I had a handle on how to recreate the style, I created some glyphs:
 
-{{< figure name="glyphs" >}}
+<Figure src="images/mine/glyphs.png" >
+</Figure>
 
 In Wipeout, there were various glyphs woven into the background. These were actually in-game icons for powerups and tracks, so it made sense to make some iconography for our layouts. Then, I made some sketches of the layout I wanted, as well as some ideas for how to construct various panels.
 {{< columns >}}
 
 This concept sketch eventually came together in the form of a panel for holding info about an individual run:
-{{< figure name="sketch1" command="Crop" options="2700x2500 BottomLeft q50 lanczos" >}}
+<Figure src="images/mine/sketch_1.jpg" command="Crop" options="2700x2500 BottomLeft q50 lanczos" >
+</Figure>
 
 <--->
 
@@ -102,7 +89,8 @@ This concept sketch eventually came together in the form of a panel for holding 
 
 As I worked, I did find that I was running out of ideas for glyphs and graphics, so I purchased an asset pack off Etsy to help me compose my layouts more rapidly. That was a big help! I even ended up composing an advertisement for the event entirely using the asset pack, and I was pretty happy with how that turned out. For now, this is what I've got, although I don't think it's quite complete yet.
 
-{{< figure name="layout">}}
+<Figure src="images/mine/layout.png">
+</Figure>
 
 I think this captures the essence of the style, at least. There's something not quite cohesive about it just yet but I'm sure I'll get there in time. I think the mix of angled corners and rounded corners might not work as well as I thought, and I'm not certain I'm making good use of my space. There are places where complexity is good and places where it's bad, and I haven't quite nailed down where those boundaries lie just yet. Still, I'll figure it out!
 

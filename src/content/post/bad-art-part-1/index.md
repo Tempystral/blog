@@ -1,6 +1,6 @@
 ---
 title: Bad Art is Fascinating
-date: 2023-01-28T14:00:57-05:00
+publishDate: 2023-01-28T14:00:57-05:00
 description: 'And I am not an authority on art'
 
 slug: bad-art-part-1
@@ -12,18 +12,14 @@ keywords: [art, bad art, ]
 tags: [Art, Media]
 categories: [Philosophy]
 series: ['Bad Art Discourse']
-
-resources:
-  - name: darger
-    src: images/henry-darger-ORIG.jpg
-  - name: mr electric
-    src: images/mr-electric_orig.jpg
 ---
 
 I think a lot about media: The music I listen to, the shows I watch, the art I view, and the messages each of us produces and consumes. In particular, I think a lot about bad art. There's something fascinating about art which fails to love up to the expectations set for it. I love janky, unplayable video games. I adore movies from the likes of Neil Breen, whose movies go increasingly off the rails.
 
 I'm not alone either; I think it's fair to say that everyone has that one terrible movie they love. For me, it's _Shark Boy and Lavagirl_. For you it may be another movie, or a book or TV show or video game. Whatever the medium, there is something about _junk_ that resonates with audiences.
-{{< figure name="mr electric" alt="Mister Electric, played by George Lopez, towers over three okay child actors." caption="God this movie rules" >}}
+<Figure src="images/mr-electric_orig.jpg" alt="Mister Electric, played by George Lopez, towers over three okay child actors.">
+God this movie rules
+</Figure>
 
 Bad media also has a foothold in the modern media landscape. Movies like _The Room_ or _Plan 9 from Outer Space_ are celebrated as a refreshing step back from the rigid convention of Hollywood, and there are an abundance of productions about watching and ragging on bad movies like Red Letter Media's _Best of the Worst_ or _Mystery Science Theater 3000_. Creating your own Sonic OC is a time-honoured ritual of internet culture these days. Review shows like _AVGN_ have solidified video games like _Dick Tracy_ into our memory. And yet despite the popularity of "bad art", I think you'd be hard pressed to find any consensus among people describing what actually makes art good or bad.
 
@@ -36,7 +32,9 @@ These beliefs about technical skill come in part from a set of conventions taugh
 <!-- {{< figure name="bean" alt="Bean, a farmer from Fantastic Mister Fox, sits in front of his hunting trophies." caption="Wes Anderson's straight-ahead shots always tell a story." >}} -->
 
 Outsider art also flies in the face of our assumptions about quality - Someone like Henry Darger may have created technically unskilled works but his illustrations are powerful, often disturbing masterpieces. Is his art bad simply because he was unskilled?
-{{< figure name="darger" alt="A crude illustration of many girls running across a surreal landscape. Many of the girls are identical in shape and posture." caption="Despite the crude technique, the tension in this piece is unmistakable." >}}
+<Figure src="images/henry-darger-ORIG.jpg" alt="A crude illustration of many girls running across a surreal landscape. Many of the girls are identical in shape and posture.">
+Despite the crude technique, the tension in this piece is unmistakable.
+</Figure>
 
 I had the luxury of asking an animator friend about this, and he suggested that art is good when it achieves the goals set out for it. When a work of art fails to capture an audience, it's often because expectations were set poorly. For example, the Dragon Ball movie was marketed as an adaptation of the anime, but failed to live up to those expectations, and fans judged it accordingly.
 

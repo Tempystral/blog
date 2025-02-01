@@ -14,19 +14,13 @@ keywords: []
 tags: []
 categories: [Personal]
 
-featuredImage: uploads/featured/artbattle.jpg
-
-resources:
-  - name: cutting board
-    src: images/IMG20230223190125.jpg
-  - name: first rolls
-    src: images/IMG20230223193255.jpg
-  - name: plate of sushi
-    src: images/IMG20230223193258.jpg
+coverImage:
+  src: public/images/featured/artbattle.jpg
+  alt: ""
 ---
 
 <!-- Stuff I've been doing -->
-<!-- 
+<!--
 - Art Battle
 - House work
 - Writing this blog
@@ -34,7 +28,7 @@ resources:
 - Working on my own coding projects
   - Finishing Rocket Bot
   - Work on Licenseathon and Leaderboards.gg
-  - 
+  -
 - Getting back into streaming
 - Learning fighting games - talk about some notable successes and why I like it
 
@@ -42,7 +36,7 @@ resources:
 - Pushing my way into doing stuff I want to get done, and working for it
 - Feels good to be getting projects finished, even if it's tough to push myself to do them
  -->
- <!-- 
+ <!--
  Blog updates:
  - Projects page on the top bar
  - Mobile view fixes
@@ -66,15 +60,20 @@ My dad visited early on in the year for an event I got him tickets to - it's cal
 
 This Thursday I attended a cooking class (his Christmas gift to me) where I learned how to make sushi. It was super fun, very laid back. The instructor was very insightful and clearly loved sharing his experience with others. Turns out making sushi is actually very easy, but getting the taste and texture of sushi rice takes some know-how. I ended up going home with a lot of rice and fish on top of all the stuff I made there so I'm gonna be eating it for a bit!
 
-{{< figure name="cutting board" alt="Sliced cucumber and avocado, raw salmon, tuna, crab, grilled tuna, and shrimp sit on a tray next to a cutting board, which holds a bamboo rolling mat and a sheet of nori." >}}
+<Figure src="images/IMG20230223190125.jpg" alt="Sliced cucumber and avocado, raw salmon, tuna, crab, grilled tuna, and shrimp sit on a tray next to a cutting board, which holds a bamboo rolling mat and a sheet of nori." >
+</Figure>
 
 Apparently, blue cutting boards are for fish - I don't remember any of the other colours except purple which is for allergies, and white which is general-purpose. I got a huge white cutting board just like this recently and it's so nice to prepare food on I'm amazed I didn't get one sooner.
 
-{{< figure name="first rolls" caption="I was pretty happy with these ones" alt="Six maki sit on the cutting board. There are toasted sesame seeds and roe on top. They are delicious." >}}
+<Figure src="images/IMG20230223193255.jpg"alt="Six maki sit on the cutting board. There are toasted sesame seeds and roe on top. They are delicious.">
+I was pretty happy with these ones
+</Figure>
 
 I learned pretty quickly to keep my knife wet, or else the sushi tears and stretches very easily. It's kind of amazing just how sticky the rice is even after you rinse off all the surface starch!
 
-{{< figure name="plate of sushi" caption="I made way more than this but I also ate way more than this" alt="Crab maki, reverse-wrapped salmon maki, and salmon and tuna nigiri sushi sit on a plate." >}}
+<Figure src="images/IMG20230223193258.jpg"alt="Crab maki, reverse-wrapped salmon maki, and salmon and tuna nigiri sushi sit on a plate.">
+I made way more than this but I also ate way more than this
+</Figure>
 
 # How have I been?
 I remarked in my 2022 end-of-year post that I was entering the year with a sense of hesitancy, and I'm pleased to report that feeling has more or less evaporated. I have a tendency to get stuck in my own head about personal worth and the stuff I wish I was doing, and for years I've been meaning to do things like write this blog or get into fighting games. So... I have! I think setting this goal for my blog, giving myself two weeks per post, has really motivated me to move forward on tasks on my bucket list. It's also been pulling me out of the emotional slump I was in towards the end of 2022, which is great. It feels good to be om top of things again!

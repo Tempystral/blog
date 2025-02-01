@@ -4,8 +4,9 @@ date: 2023-02-19T21:52:39-05:00
 publishDate: 2023-03-11T18:32:00.021Z
 description: 'Thinking about thinking about talking about art'
 
-featuredImage: uploads/featured/plan9fromouterspace1959.86783.jpg
-
+coverImage:
+  src: public/images/featured/plan9fromouterspace1959.86783.jpg
+  alt: ""
 slug: bad-art-part-2
 aliases:
   - /posts/bad-art-part-2
@@ -15,12 +16,6 @@ keywords: [art, bad art, mystery science theater 3000, kusogrande, kusoge]
 tags: [Art, Media, Communication]
 categories: [Philosophy]
 series: ['Bad Art Discourse']
-
-resources:
-  - name: the voice of fire
-    src: images/newmanvoff.jpg
-  - name: mst3k
-    src: images/mst3k.png
 ---
 
 # Outline
@@ -42,13 +37,13 @@ In my last post I asked a friend who works in animation for his thoughts on "bad
 
 Initially, I found this stance pretty strong, but as I've had time to digest it I find that I largely agree. A casual internet commenter doesn't know an artist's goals for a piece, or where they're at in their artistic journey, and as a result their ability to offer insight is limited or nonexistent.
 
-I spoke with my brother ([an audio engineer](https://www.micahdoern.com/)) about this and he agreed. He told me he often watches people in online music production communities offer "advice" which is unhelpful and given without regard for the musician's decision-making process. For example, a noisy recording is typically not desirable, but there are cases where an artist might use noisy mics or equipment in order to evoke a particular sound. To remark "That piano sounds crunchy, you should have cleaned it up" would be pretty ignorant if that was the desired effect. 
+I spoke with my brother ([an audio engineer](https://www.micahdoern.com/)) about this and he agreed. He told me he often watches people in online music production communities offer "advice" which is unhelpful and given without regard for the musician's decision-making process. For example, a noisy recording is typically not desirable, but there are cases where an artist might use noisy mics or equipment in order to evoke a particular sound. To remark "That piano sounds crunchy, you should have cleaned it up" would be pretty ignorant if that was the desired effect.
 
 Painter Damian Osborne notes in [this piece](https://www.damianosborne.com/dealing-with-criticism-as-an-artist) that a bad critic turns feedback into a series of decisions _they_ would have made, a projection of their ego. Bad critique rarely comes from a place of humility. If an artist seems to have proportioned a human body strangely, that may very well be intentional. If it wasn't intentional, was strong anatomy was part of the artist's goals? It would be pretty audacious of me to say the artist made a mistake without that knowledge.
 
-{{< figure name="the voice of fire" caption="Voice of Fire is infamous for its simplicity. One Canadian MP claimed he could recreate it with a paint roller and a few hours. Barnett Newman, Voice of Fire, 1967. Acrylic on canvas, 543.6 x 243.8 cm. Purchased 1989. National Gallery of Canada, Ottawa. ©The Barnett Newman Foundation, New York/ SOCAN, Montreal (2022). Photo: NGC" alt="A man looks at Voice of Fire by Barnett Newman (1967). The painting consists of a tall canvas split into equal vertical stripes: blue, red, then blue again."
-  command="Fit" options="500x800 lanczos"
->}}
+<Figure src="images/newmanvoff.jpg"alt="A man looks at Voice of Fire by Barnett Newman (1967). The painting consists of a tall canvas split into equal vertical stripes: blue, red, then blue again."  command="Fit" options="500x800 lanczos">
+Voice of Fire is infamous for its simplicity. One Canadian MP claimed he could recreate it with a paint roller and a few hours. Barnett Newman, Voice of Fire, 1967. Acrylic on canvas, 543.6 x 243.8 cm. Purchased 1989. National Gallery of Canada, Ottawa. ©The Barnett Newman Foundation, New York/ SOCAN, Montreal (2022). Photo: NGC
+</Figure>
 
 ### Two thoughts
 1. One is not required to have "a take". We'd all probably benefit from practicing mindfulness and considering whether we can add value to a discussion.
@@ -95,7 +90,9 @@ It is entirely possible that someone's only exposure to a game creator is throug
 
 Sometimes though, we play more recent games - Is it fair to feature a developer like Dontrel Murphy or MDickie? There are many valid critiques you could level at their work, but the fact remains that they've continued putting out game after game according to their own artistic vision. Whether that vision or their work process is any good... well, I personally treat these creators as outsider artists in the same way as I do Neil Breen, but I would understand feeling hurt seeing one's work end up in "the bad video game tournament". For these developers I like to focus on the uniqueness and highlight ways in which they've solved problems or implemented mechanics in an unconventional way.
 
-{{< figure name="mst3k" caption="Mystery Science Theater 3000 has never come across as mean-spirited to me, and they put a spin on the show by producing their own sketches. I think that elevates their work from the sea of low-effort imitators." alt="An ad for Mystery Science Theater 3000" >}}
+<Figure src="images/mst3k.png"alt="An ad for Mystery Science Theater 3000">
+Mystery Science Theater 3000 has never come across as mean-spirited to me, and they put a spin on the show by producing their own sketches. I think that elevates their work from the sea of low-effort imitators.
+</Figure>
 
 ## Low quality does not mean unenjoyable
 I mean it, unironically too. Art that's bad doesn't have to be unenjoyable, and fun doesn't have to come at the expense of the art or artist. It's easy to look at bad media and note its flaws, but much tougher - and more interesting - is embracing those flaws and finding gems in them. It won't always happen, but like I said in my last post, I think there's often something interesting or enjoyable to take away from bad art.
@@ -106,8 +103,8 @@ I admit this post has somewhat tapered off in narrative flow, so let's wrap it u
 
 2. As it relates to speaking our minds about art in general: Be fair. Maybe this is obvious but there is a lot of low-effort and bad faith discourse surrounding art and media. Consider your reach as an individual and your ability to affect opinion in others. If you must give critique, offer justification for your feedback, and keep your ego in check. Don't make it about yourself. And most importantly, be open to finding good in the bad.
 
-<!-- 
-There is an entire other discussion to be had about the difference between individuals and professional critics offering feedback, 
+<!--
+There is an entire other discussion to be had about the difference between individuals and professional critics offering feedback,
 With that said, art consumers describing what they like or don't about a piece and critiquing it are different - we talked about this in the last post but a lot of people are simply not thinking about and are not trained in the technical aspects of art and media.
 We as consumers are also in an era of artistic mass media, the work we consume not just art but _products_. The general populace is more immersed in art than ever before, but art education is still uncommon. We as a society are, by my estimation, not likely to offer much insight into quality except by reference to other work within our frame of reference. A lot of the time, this is what we like. There's a reason every superhero film follows the Marvel formula these days.
 

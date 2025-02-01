@@ -16,12 +16,11 @@ keywords: [politics, flowers, gender]
 tags: [personal]
 categories: []
 
-featuredImage:
-
-resources:
-  - name: rose
-    src: photos/rose.jpg
+coverImage:
+  src: ""
+  alt: ""
 ---
+
 {{< notice info "Info" >}}
 I've been having a pretty low-key year. I'd hoped to update this blog more throughout the year but it's been difficult to find something I want to write about. I need to focus less on polish and more on just writing. That said, I do have a brief topic for today.
 {{< /notice >}}
@@ -33,7 +32,9 @@ What? I was a little dumbfounded at first. Reading the tag on the flower, it sai
 
 I'm not sure what to make of this statement. To tell you the truth, I was a little insulted - A statistic? Nobody told me. Was I expected to know this? Was I expected to care? Be happy? So what if I receive a flower? So what if 88% of men haven't received flowers before? So what if I'm "no longer a statistic"? I need to break down all my thoughts on this topic and I can't promise they will make sense in order.
 
-{{< figure name="rose" command="Fit" options="720x600" caption="At least the flower is nice" alt="A white rose sits in a mason jar. The stem has a label affixed to it with twine. The label says \"Did you know... 88% of men never receive flowers until their funeral\"" >}}
+<Figure src="photos/rose.jpg" command="Fit" options="720x600"alt="A white rose sits in a mason jar. The stem has a label affixed to it with twine. The label says \"Did you know... 88% of men never receive flowers until their funeral\"">
+At least the flower is nice
+</Figure>
 
 ## People aren't numbers and that isn't how statistics work
 I generally reject the message that a person is a statistic when presented by activists or advertisements. People are not a collection of metadata, and treating them as such is dehumanizing. Even more so to say it to someone's face. I'm a collection of numbers in your eyes? Not a person, just one of 88% of un-flowered men?[^1] And should I be happy about no longer "being a statistic"? That's not how statistics work, they aren't random inequalities or outliers. Statistics are a _report_ of the data as it exists. 88% is not a particularly interesting percentage. What makes a data point noteworthy is how it is interpreted in the context of other factors.

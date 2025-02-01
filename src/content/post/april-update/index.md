@@ -15,8 +15,9 @@ keywords: []
 tags: []
 categories: [Personal]
 
-featuredImage:
-
+coverImage:
+  src: undefined
+  alt: ""
 resources:
   - 
 ---

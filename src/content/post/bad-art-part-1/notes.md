@@ -1,3 +1,9 @@
+---
+title: Notes
+description: 'Enter a description here (optional)'
+publishDate: "2025-02-01T02:08:00Z"
+draft: true
+---
 
 Off the top of my head, what are the key issues?
 - Honesty/genuineness
