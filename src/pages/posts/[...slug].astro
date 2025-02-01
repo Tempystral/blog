@@ -1,6 +1,6 @@
 ---
 import { render } from "astro:content";
-import { components } from "@/components/blog/components";
+import * as components from "@/components/blog/components";
 import { getAllPosts } from "@/data/post";
 import PostLayout from "@/layouts/BlogPost.astro";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";

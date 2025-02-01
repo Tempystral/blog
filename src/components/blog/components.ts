@@ -1,6 +1,5 @@
+import Detail from "./partials/Detail.astro";
 import Figure from "./partials/Figure.astro";
 import Video from "./partials/Video.astro";
 
-export const components = {
-  Figure, Video
-};
+export { Detail, Figure, Video };
