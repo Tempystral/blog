@@ -6,8 +6,9 @@ interface Props {
 	src: string;
 	alt?: string;
 	width?: number;
+	colour?: string;
 }
-const { src, alt } = Astro.props;
+const { src, alt, colour } = Astro.props;
 
 let img: ImageMetadata | null = null;
 
@@ -19,9 +20,10 @@ const path = `/src/content/post/${slug}/${src}`;
 if (images[path]) {
 	img = (await images[path]()).default;
 }
+const bgcolour = colour ?? "bg-accent dark:bg-quote";
 ---
 
-<figure class="rounded-md bg-accent px-2 pt-2">
+<figure class:list={["rounded-md px-2 pt-2", bgcolour]}>
 	{
 		img && (
 			<a href={img.src}>
@@ -33,12 +35,12 @@ if (images[path]) {
 			</a>
 		)
 	}
-	<figcaption class="text-md flex items-center pb-0.5 text-right text-bgColor">
+	<figcaption class="text-md flex items-end pb-0.5 text-right text-bgColor dark:text-bgColor">
 		<span class="flex-grow">
 			<slot>
 				<p class="-mb-1.5"></p>
 			</slot>
 		</span>
-		<Icon name="mdi:arrow-bottom-right-thick" class="text-textColor" size={32} />
+		<Icon name="mdi:arrow-bottom-right-thick" class="mb-2 min-w-8 text-textColor" size={32} />
 	</figcaption>
 </figure>
