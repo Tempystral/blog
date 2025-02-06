@@ -98,4 +98,8 @@
 			calc(100% - 2em) 2em
 		);
 	}
+
+	.grid-areas {
+		grid-template-areas: "article article article article article aside";
+	}
 }
