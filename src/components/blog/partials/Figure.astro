@@ -20,7 +20,7 @@ const path = `/src/content/post/${slug}/${src}`;
 if (images[path]) {
 	img = (await images[path]()).default;
 }
-const bgcolour = colour ?? "bg-accent dark:bg-quote";
+const bgcolour = colour ?? "bg-accent-2 dark:bg-quote";
 ---
 
 <figure class:list={["rounded-md px-2 pt-2", bgcolour]}>

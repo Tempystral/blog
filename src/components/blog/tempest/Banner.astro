@@ -9,10 +9,9 @@ interface Props {
 const { title, accent: selected = "amber" } = Astro.props;
 
 const colors = {
-	blue: "bg-sky-800",
-	amber: "bg-amber-400",
-	red: "bg-accent",
-	"accent-2": "bg-accent-2",
+	blue: "bg-accent-2",
+	amber: "bg-accent",
+	red: "bg-quote",
 	gray: "bg-slate-500",
 };
 
@@ -46,7 +45,7 @@ const icons = [
 			size={24}
 		/>
 	</div>
-	<p class="aside-body relative px-8 py-2">
+	<p class="aside-body relative border-4 border-bgColor bg-accent px-8 py-2">
 		<slot />
 	</p>
 </div>

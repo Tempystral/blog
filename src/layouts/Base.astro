@@ -20,14 +20,20 @@ const {
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
-	<body
-		class="font- mx-auto flex min-h-screen max-w-4xl flex-col bg-bgColor px-4 pt-16 text-sm font-normal text-textColor antialiased sm:px-8">
-		<ThemeProvider />
-		<SkipLink />
-		<Header />
-		<main id="main">
-			<slot />
-		</main>
-		<Footer />
-	</body>
-</html>
+
+	<body class="grid grid-cols-12 bg-bgColor">
+		<div id="bg-stripe" class="h-full bg-accent dark:bg-bgColor sm:col-span-12 sm:col-start-1">
+			<div
+				id="body-wrapper"
+				class="mx-auto flex min-h-screen max-w-4xl flex-col px-4 pt-16 text-sm font-normal text-textColor antialiased sm:px-12">
+				<ThemeProvider />
+				<SkipLink />
+				<Header />
+				<main id="main">
+					<slot />
+				</main>
+				<Footer />
+			</div>
+		</div>
+	</body></html
+>
