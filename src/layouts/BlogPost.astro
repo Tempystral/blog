@@ -24,12 +24,14 @@ const { headings } = await render(post);
 		ogImage: socialImage,
 		title,
 	}}>
-	<div id="content" class="gap-x-10 lg:flex lg:items-start">
+	<div id="content" class="gap-x-10 lg:grid lg:grid-cols-6">
 		{!!headings.length && <TOC headings={headings} />}
-		<article class="flex-grow break-words" data-pagefind-body>
-			<div id="blog-hero"><Masthead content={post} /></div>
+		<article class="relative col-span-10 col-start-1 break-words" data-pagefind-body>
+			<div id="blog-hero" class="relative">
+				<Masthead content={post} />
+			</div>
 			<div
-				class="prose prose-sm prose-cactus mt-12 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
+				class="bg-text-bg prose prose-sm prose-cactus mt-8 rounded-lg px-8 py-4 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent dark:text-bgColor sm:prose-th:before:content-none">
 				<slot />
 			</div>
 		</article>

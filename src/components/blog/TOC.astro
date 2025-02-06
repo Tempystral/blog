@@ -10,11 +10,40 @@ interface Props {
 const { headings } = Astro.props;
 
 const toc = generateToc(headings);
+
+const icons = [
+	{ name: "mdi:circle-opacity", size: 16 },
+	{ name: "mdi:circle-outline", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+	{ name: "mdi:close-thick", size: 16 },
+	{ name: "mdi:circle-medium", size: 16 },
+];
 ---
 
-<aside class="sticky top-20 order-2 -me-32 hidden basis-64 lg:block">
-	<h2 class="title text-lg">Table of Contents</h2>
-	<ul class="mt-4 text-xs">
+<aside
+	class="sticky top-20 order-2 col-span-1 col-start-11 -me-36 hidden min-w-44 max-w-60 basis-64 self-start lg:block">
+	<!-- <div class="mb-1">
+		<Icon
+			aria-hidden="true"
+			class="-me-2 inline"
+			focusable="false"
+			name="mdi:circle-half"
+			size="16"
+		/>
+		{
+			icons.map(({ name, size }) => (
+				<Icon aria-hidden="true" class="inline" focusable="false" name={name} size={size} />
+			))
+		}
+	</div> -->
+	<hr class="h-0.5 rounded-sm border-0 bg-textColor" />
+	<h2 class="subtitle text-center text-lg">Table of Contents</h2>
+	<hr class="h-0.5 rounded-sm border-0 bg-textColor" />
+	<ul class="text-xs">
 		{toc.map((heading) => <TOCHeading heading={heading} />)}
 	</ul>
 </aside>
