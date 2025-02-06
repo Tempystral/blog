@@ -31,7 +31,10 @@ export default {
 					"@apply underline underline-offset-2": {},
 				},
 				".title": {
-					"@apply text-2xl font-semibold text-accent-2": {},
+					"@apply text-5xl font-semibold text-accent-2": {},
+				},
+        ".subtitle": {
+					"@apply text-2xl font-semibold text-accent-3": {},
 				},
 				".bg-bevel": {
 					"clip-path":
@@ -56,17 +59,21 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				accent: "hsl(var(--theme-accent) / <alpha-value>)",
-				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
-				bgColor: "hsl(var(--theme-bg) / <alpha-value>)",
-				link: "hsl(var(--theme-link) / <alpha-value>)",
-				quote: "hsl(var(--theme-quote) / <alpha-value>)",
-				textColor: "hsl(var(--theme-text) / <alpha-value>)",
+				/* accent: "rgba(var(--theme-accent), <alpha-value>)", */
+        accent: "rgba(var(--theme-accent), <alpha-value>)",
+				"accent-2": "rgba(var(--theme-accent-2), <alpha-value>)",
+        "accent-3": "rgba(var(--theme-accent-3), <alpha-value>)",
+				bgColor: "rgba(var(--theme-bg), <alpha-value>)",
+        "text-bg": "rgba(var(--theme-text-bg), <alpha-value>)",
+				link: "rgba(var(--theme-link), <alpha-value>)",
+				quote: "rgba(var(--theme-quote), <alpha-value>)",
+				textColor: "rgba(var(--theme-text), <alpha-value>)",
 			},
 			fontFamily: {
 				// Add any custom fonts here
 				sans: [...fontFamily.sans],
 				serif: [...fontFamily.serif],
+        display: ["Kredit Back", ...fontFamily.serif]
 			},
 			transitionProperty: {
 				height: "height",
@@ -76,6 +83,7 @@ export default {
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
+            maxWidth: "80ch",
 						a: {
 							"@apply cactus-link": "",
 						},
