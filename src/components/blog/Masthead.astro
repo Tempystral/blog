@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 import { Icon } from "astro-icon/components";
+import Divider from "../Divider.astro";
 
 interface Props {
 	content: CollectionEntry<"post">;
@@ -18,6 +19,11 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 ---
 <!-- Move infobox to sidebar on wider displays? -->
 <!-- Whole screen amber and content in a lighter box? Background clip mode to prevent blending issues? -->
+<style>
+  #title-box {
+    grid-template-areas: "title title title title title props props";
+  }
+</style>
 {
 	data.coverImage && (
 		<div class="mb-6 aspect-[16/9]">
@@ -32,8 +38,8 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 	)
 }
 {data.draft ? <span class="text-base text-red-500">(Draft)</span> : null}
-<div id="title-box" class="flex flex-row justify-between">
-  <div class="max-w-[66%]">
+<div id="title-box" class="grid grid-cols-7 gap-2 justify-between items-end">
+  <div style="grid-area: title;">
     <h1 class="title text-balance mb-3">
       {data.title}
     </h1>
@@ -42,7 +48,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
     </h2>)
     }
   </div>
-	<div id="property-list" class="flex h-fit bg-bgColor/50 p-2 m-2 rounded-md">
+	<div id="property-list" style="grid-area: props;" class="flex h-fit bg-bgColor/50 p-2 rounded-md">
       <span class="rotate-180 font-display text-center text-4xl -ml-2 w-10 font-stretch-condensed" style="writing-mode: vertical-rl; text-orientation: mixed;">
         PROPS
       </span>
@@ -106,6 +112,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 		</dl>
 	</div>
 </div>
+<Divider />
 <!-- <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
 	<p class="font-semibold">
 		<FormattedDate date={data.publishDate} dateTimeOptions={dateTimeOptions} /> /{" "}
@@ -121,13 +128,4 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 		)
 	}
 </div> -->
-<div class="inline-flex items-center justify-start w-full -ms-6">
-  <Icon
-    aria-hidden="true"
-    class="inline"
-    focusable="false"
-    name="mdi:target"
-    size="24"
-  />
-  <hr class="my-4 h-0.5 ms-2 -me-6 w-full rounded-sm border-0 bg-textColor" />
-</div>
+

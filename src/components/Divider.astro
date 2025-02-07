@@ -1,0 +1,12 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+	icon?: string;
+}
+const { icon = "mdi:target" } = Astro.props;
+---
+
+<div class="-ms-6 inline-flex w-full items-center justify-start">
+	<Icon aria-hidden="true" class="inline" focusable="false" name={icon} size="24" />
+	<hr class="my-4 -me-6 ms-2 h-0.5 w-full rounded-sm border-0 bg-textColor" />
+</div>

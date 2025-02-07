@@ -21,12 +21,12 @@ const {
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
 
-	<body class="grid grid-cols-12 bg-bgColor">
-		<div id="bg-stripe" class="h-full bg-accent dark:bg-bgColor sm:col-span-12 sm:col-start-1">
+	<body class="bg-bgColor">
+		<ThemeProvider />
+		<div id="theme-bg" class="h-full w-full bg-accent dark:bg-bgColor">
 			<div
 				id="body-wrapper"
 				class="mx-auto flex min-h-screen max-w-4xl flex-col px-4 pt-16 text-sm font-normal text-textColor antialiased sm:px-12">
-				<ThemeProvider />
 				<SkipLink />
 				<Header />
 				<main id="main">
