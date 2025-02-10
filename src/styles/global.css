@@ -55,34 +55,31 @@
 
 	:root[data-theme="dark"] {
 		color-scheme: dark;
+		--dark-bg: rgb(29, 31, 32);
+		--dark-text-bg: 250, 250, 250;
+		--dark-link: rgb(212, 130, 171);
+		--dark-text: rgb(250, 250, 250);
+		--dark-accent: rgb(0, 188, 212);
+		--dark-accent-2: rgb(237, 237, 237);
+		--dark-quote: rgb(203, 42, 66);
+
 		--theme-bg: 29, 31, 32;
 		--theme-text-bg: 250, 250, 250;
 		--theme-link: 212, 130, 171;
-		--theme-text: 200, 201, 203;
-		--theme-accent: 0, 188, 212;
-		--theme-accent-2: 237, 237, 237;
+		--theme-text: 250, 250, 250;
+		--theme-accent: 29, 31, 32;
+		--theme-accent-2: 236, 131, 5;
+		--theme-accent-3: 255, 64, 129;
 		--theme-quote: 203, 42, 66;
 	}
 }
 
 @layer components {
-	.aside-wrapper {
-		position: relative;
-		/* @apply border-b-8 border-l-4 border-r-8 border-t-4 border-solid; */
-		@apply ml-0 pb-2 pl-1 pr-2 pt-1;
-		@apply rounded-b-3xl rounded-r-3xl rounded-tl-2xl;
-		&::before {
-			content: "";
-			position: absolute;
-			@apply sm:-inset-5 sm:size-16;
-			@apply aspect-square rounded-full bg-accent;
-		}
-	}
-	.aside-body {
-		/* @apply border-b-8 border-l-2 border-r-8 border-t-2 border-solid; */
-		/* @apply border-4 border-solid; */
-		@apply rounded-bl-sm rounded-br-2xl rounded-tl-xl rounded-tr-sm;
-		@apply -inset-x-1.5 -inset-y-1.5;
+	.aside-wrapper::before {
+		content: "";
+		position: absolute;
+		@apply sm:-inset-5 sm:size-16;
+		@apply aspect-square rounded-full bg-accent;
 	}
 
 	.angled-corner {

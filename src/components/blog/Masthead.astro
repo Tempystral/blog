@@ -43,12 +43,12 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
     <h1 class="title text-balance mb-3">
       {data.title}
     </h1>
-    { (data.description && <h2 id="subtitle" class="subtitle text-balance bg-bgColor/50 rounded-lg px-2 pb-1 text-2xl font-sans w-fit">
+    { (data.description && <h2 id="subtitle" class="subtitle text-balance bg-bgColor/50 dark:bg-accent-3/20 rounded-lg px-2 pb-1 text-2xl font-sans w-fit">
       { data.description }
     </h2>)
     }
   </div>
-	<div id="property-list" style="grid-area: props;" class="flex h-fit bg-bgColor/50 p-2 rounded-md">
+	<div id="property-list" style="grid-area: props;" class="flex h-fit bg-bgColor/50 dark:bg-text-bg/20 p-2 rounded-md">
       <span class="rotate-180 font-display text-center text-4xl -ml-2 w-10 font-stretch-condensed" style="writing-mode: vertical-rl; text-orientation: mixed;">
         PROPS
       </span>

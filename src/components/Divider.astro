@@ -1,12 +1,31 @@
 ---
 import { Icon } from "astro-icon/components";
-interface Props {
+
+type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
+type XOR<T, U> = T | U extends object ? (Without<T, U> & U) | (Without<U, T> & T) : T | U;
+type Side = XOR<{ left?: boolean }, { right?: boolean }>;
+
+type Props = {
 	icon?: string;
-}
-const { icon = "mdi:target" } = Astro.props;
+} & Side;
+const { icon = "mdi:target", left, right } = Astro.props;
+const isLeft = left || !right;
+
+const direction = !isLeft ? "flex-row-reverse" : "flex-row";
 ---
 
-<div class="-ms-6 inline-flex w-full items-center justify-start">
-	<Icon aria-hidden="true" class="inline" focusable="false" name={icon} size="24" />
-	<hr class="my-4 -me-6 ms-2 h-0.5 w-full rounded-sm border-0 bg-textColor" />
+<div class:list={["-ms-6 inline-flex w-full items-center justify-start", direction]}>
+	<Icon
+		aria-hidden="true"
+		class:list={["inline basis-6", !isLeft && "-me-6"]}
+		focusable="false"
+		name={icon}
+		size="24"
+	/>
+	<hr
+		class:list={[
+			"my-4 ms-2 h-0.5 flex-grow rounded-sm border-0 bg-textColor",
+			isLeft ? "-me-6 w-full" : "me-2",
+		]}
+	/>
 </div>

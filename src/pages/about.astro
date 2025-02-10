@@ -1,5 +1,9 @@
 ---
+import profileimg from "@/assets/images/profile.jpg";
+import SocialList from "@/components/SocialList.astro";
+import { Figure } from "@/components/blog/components";
 import PageLayout from "@/layouts/Base.astro";
+import Emoji from "astro-emoji";
 
 const meta = {
 	description: "I'm a starter theme for Astro.build",
@@ -8,30 +12,43 @@ const meta = {
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6">About</h1>
-	<div class="prose prose-sm prose-cactus max-w-none">
-		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
-		</p>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc" role="list">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
-		</ul>
-		<p>
-			Clone or fork my <a
-				aria-label="github repository"
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				rel="noreferrer"
-				target="_blank">repo</a
-			> if you like me!
-		</p>
+	<div class="flex flex-col items-center justify-center">
+		<div id="about-container">
+			<h1 class="title mb-6">About me</h1>
+			<div
+				class="grid-rows-auto prose prose-sm prose-cactus mt-8 grid max-w-[100ch] grid-cols-2 rounded-lg bg-text-bg px-8 py-4 dark:text-bgColor"
+				style="grid-template-columns: 60%  40%;">
+				<div class="col-span-1 col-start-1 text-balance">
+					<p>
+						My name is Eli, aka Tempystral. I'm a software developer and cognitive science graduate
+						from
+						<Emoji symbol="🇨🇦" />
+						Canada.
+					</p>
+
+					<p>
+						My interests range from game design to urban planning, but I have many interests and
+						fleeting attention. My hope is that this blog can be a place for me to explore topics
+						that catch my attention and offer a place to write long-form pieces unsuited to social
+						media.
+					</p>
+
+					<div class="flex flex-wrap items-center gap-x-2">
+						You can find me elsewhere on the internet here: <span
+							class="not-prose rounded-lg border-text-bg bg-accent/50 p-2">
+							<SocialList />
+						</span>
+					</div>
+				</div>
+				<div class="relative left-20 top-20 col-span-1 col-start-2 -mt-20">
+					<span
+						class="subtitle absolute -left-8 top-6"
+						style="text-orientation: mixed; writing-mode: vertical-rl;">
+						The only good picture of me
+					</span>
+					<Figure src={profileimg} />
+				</div>
+			</div>
+		</div>
 	</div>
 </PageLayout>

@@ -15,7 +15,7 @@ export default {
 			files: "**/*.astro",
 			options: {
 				parser: "astro",
-				htmlWhitespaceSensitivity: "ignore",
+				htmlWhitespaceSensitivity: "strict",
 				bracketSameLine: true,
 				bracketSpacing: true,
 				jsxBracketSameLine: true,
