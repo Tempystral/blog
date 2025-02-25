@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import Divider from "@/components/Divider.astro";
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
-import Banner from "@/components/blog/tempest/Banner.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 //import { siteConfig } from "@/site.config";
@@ -23,56 +23,31 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES); */
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">Tempystral's test blog</h1>
+		<h1 class="title mb-6">Welcome</h1>
 
-		<!-- <div class="aside-wrapper relative mb-4 border-amber-400 bg-amber-400">
-			<div class="relative -inset-y-8 -mb-7 w-8/12 text-accent sm:left-12">
-				<span class="inline align-bottom text-xl">• • • • •</span>
-				<span class="text-md relative bottom-1 font-bold">{siteConfig.title}</span>
-			</div>
-			<p class="aside-body relative px-8 py-2">
-				Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
-				If you want to know more about how you can customise me, add more posts, and make it your
-				own, click on the GitHub icon link below and it will take you to my repo.
-			</p>
-		</div> -->
+		<div
+			class="prose prose-sm prose-cactus mt-8 rounded-lg bg-text-bg px-8 py-4 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent dark:text-bgColor sm:prose-th:before:content-none">
+			Welcome to my blog! This is a work in progress website where I'll post about my monthly
+			projects, personal goings-on, and whatever I personally find interesting at a given moment.
+		</div>
 
-		<Banner title="Splashy banner element" accent="red">
+		<!-- <Banner title="Splashy banner element" accent="red">
 			Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
 			If you want to know more about how you can customise me, add more posts, and make it your own,
 			click on the GitHub icon link below and it will take you to my repo.
-		</Banner>
+		</Banner> -->
 
 		<br />
-
-		<div class="mb-6 border-b-8 border-r-8 border-solid border-amber-400 pb-1 pr-1">
-			<p class="bg-bevel bevel-br bevel-tl relative bg-slate-800 px-8 py-2 text-bgColor">
-				Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
-				If you want to know more about how you can customise me, add more posts, and make it your
-				own, click on the GitHub icon link below and it will take you to my repo.
-			</p>
-			<div class="relative -bottom-1 right-8 -mb-4 h-4 text-right align-middle text-lg text-accent">
-				• • • • •
-			</div>
+		<div class="flex flex-wrap items-center gap-x-2">
+			Find me at: <SocialList />
 		</div>
-
-		<!-- <svg
-			width="100%"
-			height="auto"
-			viewBox="0 0 2500 834"
-			version="1.1"
-			xmlns="http://www.w3.org/2000/svg"
-			xmlns:xlink="http://www.w3.org/1999/xlink"
-			xml:space="preserve"
-			style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-			><path d="M2500,0l-2500,0l0,833.333l2250,0l250,-250l0,-583.333Z" style="fill:#ebebeb;"
-			></path></svg
-		> -->
-
-		<SocialList />
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-6 text-xl text-accent"><a href="/posts/">Posts</a></h2>
+	<Divider icon="mdi:arrow-down-left-thick" />
+	<section aria-label="Blog post list" class="mt-8">
+		<h2 class="title mb-6 text-3xl text-accent-2">
+			<a href="/posts/">Latest Posts</a>
+		</h2>
+
 		<ul class="space-y-4" role="list">
 			{
 				allPostsByDate.map((p) => (

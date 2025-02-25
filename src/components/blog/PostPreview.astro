@@ -12,7 +12,7 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 ---
 
 <FormattedDate
-	class="min-w-[120px] font-semibold text-gray-600 dark:text-gray-400"
+	class="min-w-[120px] rounded-lg bg-textColor py-0.5 text-center font-mono font-semibold text-accent mix-blend-normal"
 	date={post.data.publishDate}
 />
 <Tag>

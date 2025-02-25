@@ -1,0 +1,22 @@
+---
+interface Props {
+	id: string;
+}
+
+const { id } = Astro.props;
+
+const source = `https://twitter.com/intent/tweet?button_hashtag=${id}&ref_src=twsrc%5Etfw`;
+---
+
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="light"
+	><p lang="en" dir="ltr"
+		>At dawn from the gateway to Mars, the launch of Starship’s second flight test <a
+			href="https://t.co/ffKnsVKwG4">pic.twitter.com/ffKnsVKwG4</a
+		></p
+	>&mdash; SpaceX (@SpaceX) <a
+		href={source}
+		>December 7, 2023</a
+	></blockquote
+>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
+

@@ -6,7 +6,10 @@ export default {
 	tabWidth: 2,
 	useTabs: true,
 	bracketSameLine: true,
-	plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss" /* Must come last */],
+	plugins: [
+		"prettier-plugin-astro",
+		"prettier-plugin-tailwindcss" /* Must come last */,
+	],
 	overrides: [
 		{
 			files: "**/*.astro",
@@ -14,6 +17,8 @@ export default {
 				parser: "astro",
 				htmlWhitespaceSensitivity: "strict",
 				bracketSameLine: true,
+				bracketSpacing: true,
+				jsxBracketSameLine: true,
 			},
 		},
 		{

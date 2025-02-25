@@ -9,6 +9,7 @@ const patterns = {
 	figureAlt: /<Figure(.*)alt="(?<alt>[^"]+)"(.*)>/gm,
 	resources: /^.*name:\s*(?<name>.*)$\n^.*src:\s*(?<src>.*)$\n/gm,
 	allResources: /\nresources:(?:\n(.+(name|src): .+\n)+)/gm,
+	featuredImage: /featuredImage:\s?(?:(?<img>.+)\n)?/gm,
 };
 
 try {
@@ -43,15 +44,23 @@ try {
 				// Change name to src
 			});
 			console.log("Replacement results:", results);
-
-			// Remove resources
-			results = await replaceInFile({
-				files: blogposts,
-				from: patterns.allResources,
-				to: (match) => "",
-				dry: false,
-			});
 		}
+	});
+
+	// Remove resources
+	results = await replaceInFile({
+		files: blogposts,
+		from: patterns.allResources,
+		to: (match) => "",
+		dry: false,
+	});
+
+	// Replace featuredImage with coverImage
+	results = await replaceInFile({
+		files: blogposts,
+		from: patterns.featuredImage,
+		to: (match, img) => `coverImage:\n  src: ${img}\n  alt: ""`,
+		dry: false,
 	});
 
 	// Replace figure shortcodes with preliminary tag, change name to src

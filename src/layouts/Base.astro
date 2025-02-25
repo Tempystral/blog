@@ -20,14 +20,26 @@ const {
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
-	<body
-		class="font- mx-auto flex min-h-screen max-w-4xl flex-col bg-bgColor px-4 pt-16 text-sm font-normal text-textColor antialiased sm:px-8">
+
+	<body class="registration-marks h-full w-full grid-cols-8 bg-accent dark:bg-bgColor xl:grid">
 		<ThemeProvider />
-		<SkipLink />
-		<Header />
-		<main id="main">
-			<slot />
-		</main>
-		<Footer />
-	</body>
-</html>
+		{
+			/* Awkwardly tight on short pages. Probably needs some kind of after-the-fact calculation, but since it's done at build time, this isn't a big deal unless you're actually */
+			/* Array.of(1, 3, 5, 7).map(x => (
+        <RegMark width={32} height={32} class="self-center justify-self-center hidden xl:block" style={`grid-area: a${x};`} />
+        <RegMark width={32} height={32} class="self-center justify-self-center hidden xl:block" style={`grid-area: b${x};`} />
+      )) */
+		}
+
+		<div
+			id="body-wrapper"
+			class="col-span-full row-span-full mx-auto flex min-h-screen max-w-4xl flex-col px-4 pt-16 text-sm font-normal text-textColor antialiased sm:px-12">
+			<SkipLink />
+			<Header />
+			<main id="main">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+	</body></html
+>

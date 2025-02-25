@@ -7,6 +7,16 @@
 	src: url("../assets/CascadiaMono.ttf");
 }
 
+@font-face {
+	font-family: Kredit Back;
+	src: url("../assets/Kredit Back.woff2");
+}
+
+@font-face {
+	font-family: NCL Rabegs;
+	src: url("../assets/NCLRabegs-Demo.woff");
+}
+
 @layer base {
 	:root {
 		--bevel-tl: 0 0, 0 0;
@@ -19,48 +29,74 @@
 	:root[data-theme="light"] {
 		color-scheme: light;
 		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
-		--theme-bg: 0deg 0% 98%;
-		--theme-link: 172deg 18% 41%;
-		--theme-text: 203deg 11% 15%;
-		--theme-accent: 351deg 66% 48%;
-		--theme-accent-2: 0deg 0% 7%;
-		--theme-quote: 351deg 66% 48%;
+		--pink: rgb(255, 64, 129);
+		--amber: rgb(255, 193, 7);
+		--blue: rgb(63, 81, 181);
+		--sky: rgb(0, 188, 212);
+		--white: rgb(250, 250, 250);
+		--offwhite: rgb(219, 211, 211);
+		--black: rgb(20, 20, 20);
+		--amber-dark: rgb(236, 131, 5);
+		--blue-2: rgb(2, 76, 170);
+		--blue-dark: rgb(9, 16, 87);
+		--red: rgb(203, 42, 66);
+
+		--theme-bg: 250, 250, 250;
+		--theme-text-bg: 250, 250, 250;
+		--theme-text: 20, 20, 20;
+		--theme-accent: 255, 193, 7;
+		--theme-accent-2: 203, 42, 66;
+		--theme-accent-3: 2, 76, 170;
+		--theme-link: 9, 16, 87;
+		--theme-quote: 2, 76, 170;
+
+		--font-display: "Kredit Back", "sans-serif";
 	}
 
 	:root[data-theme="dark"] {
 		color-scheme: dark;
-		--theme-bg: 210deg 6% 12%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
-		--theme-accent: 159deg 64% 45%;
-		--theme-accent-2: 0deg 0% 93%;
-		--theme-quote: 102deg 100% 86%;
+		--dark-bg: rgb(29, 31, 32);
+		--dark-text-bg: 250, 250, 250;
+		--dark-link: rgb(212, 130, 171);
+		--dark-text: rgb(250, 250, 250);
+		--dark-accent: rgb(0, 188, 212);
+		--dark-accent-2: rgb(237, 237, 237);
+		--dark-quote: rgb(203, 42, 66);
+
+		--theme-bg: 29, 31, 32;
+		--theme-text-bg: 250, 250, 250;
+		--theme-link: 212, 130, 171;
+		--theme-text: 250, 250, 250;
+		--theme-accent: 29, 31, 32;
+		--theme-accent-2: 236, 131, 5;
+		--theme-accent-3: 0, 188, 212;
+		--theme-quote: 203, 42, 66;
 	}
 }
 
 @layer components {
-	.aside-wrapper {
-		position: relative;
-		/* @apply border-b-8 border-l-4 border-r-8 border-t-4 border-solid; */
-		@apply ml-0 pb-2 pl-1 pr-2 pt-1;
-		@apply rounded-b-3xl rounded-r-3xl rounded-tl-2xl;
-		&::before {
-			content: "";
-			position: absolute;
-			@apply sm:-inset-5 sm:size-16;
-			@apply aspect-square rounded-full bg-accent;
-		}
-	}
-	.aside-body {
-		/* @apply border-b-8 border-l-2 border-r-8 border-t-2 border-solid; */
-		@apply border-4 border-solid border-bgColor;
-		@apply rounded-bl-sm rounded-br-2xl rounded-tl-xl rounded-tr-sm;
-		@apply -inset-x-1.5 -inset-y-1.5;
-		@apply bg-slate-800 text-bgColor dark:bg-slate-200;
+	.aside-wrapper::before {
+		content: "";
+		position: absolute;
+		@apply sm:-inset-5 sm:size-16;
+		@apply aspect-square rounded-full;
 	}
 
 	.angled-corner {
 		background-color: var(--bg-accent);
 		background: linear-gradient(315deg, transparent 20px, var(--theme-accent) 0) bottom right;
+	}
+
+	.cutout {
+		clip-path: polygon(
+			-2em -2em,
+			-2em calc(100% - 2em),
+			calc(100% + 2em) calc(100% + 2em),
+			calc(100% - 2em) 2em
+		);
+	}
+
+	.grid-areas {
+		grid-template-areas: "article article article article article aside";
 	}
 }
