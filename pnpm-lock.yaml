@@ -23,6 +23,9 @@ dependencies:
   astro:
     specifier: 5.1.10
     version: 5.1.10(sass@1.83.4)(typescript@5.7.2)
+  astro-emoji:
+    specifier: ^1.2.0
+    version: 1.2.0
   astro-expressive-code:
     specifier: ^0.38.3
     version: 0.38.3(astro@5.1.10)
@@ -41,6 +44,9 @@ dependencies:
   hastscript:
     specifier: ^9.0.0
     version: 9.0.0
+  luxon:
+    specifier: ^3.5.0
+    version: 3.5.0
   mdast-util-directive:
     specifier: ^3.0.0
     version: 3.0.0
@@ -100,6 +106,9 @@ devDependencies:
   '@types/hast':
     specifier: ^3.0.4
     version: 3.0.4
+  '@types/luxon':
+    specifier: ^3.4.2
+    version: 3.4.2
   '@types/mdast':
     specifier: ^4.0.4
     version: 4.0.4
@@ -1701,6 +1710,10 @@ packages:
     dependencies:
       '@types/unist': 3.0.3
 
+  /@types/luxon@3.4.2:
+    resolution: {integrity: sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA==}
+    dev: true
+
   /@types/mdast@4.0.4:
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
     dependencies:
@@ -1918,6 +1931,10 @@ packages:
   /astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
+    dev: false
+
+  /astro-emoji@1.2.0:
+    resolution: {integrity: sha512-VSOWEuIJEUGX34w591LlwVWupr6Y+oFa9/HG/L3t1VdQRqK8j9c1578m67auQXMgC1FMF8S5poYF61CPawlrLw==}
     dev: false
 
   /astro-expressive-code@0.38.3(astro@5.1.10):
@@ -3980,6 +3997,11 @@ packages:
     resolution: {integrity: sha512-123qHRfJBmo2jXDbo/a5YOQrJoHF/GNQTLzQ5+IdK5pWpceK17yRc6ozlWd25FxvGKQbIUs91fDFkXmDHTKcyA==}
     engines: {node: 20 || >=22}
     dev: true
+
+  /luxon@3.5.0:
+    resolution: {integrity: sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}

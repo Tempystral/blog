@@ -3,7 +3,6 @@ import type { CollectionEntry } from "astro:content";
 import Divider from "@/components/Divider.astro";
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
-import Banner from "@/components/blog/tempest/Banner.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 //import { siteConfig } from "@/site.config";
@@ -24,13 +23,19 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES); */
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">Tempystral's blog</h1>
+		<h1 class="title mb-6">Welcome</h1>
 
-		<Banner title="Splashy banner element" accent="red">
+		<div
+			class="prose prose-sm prose-cactus mt-8 rounded-lg bg-text-bg px-8 py-4 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent dark:text-bgColor sm:prose-th:before:content-none">
+			Welcome to my blog! This is a work in progress website where I'll post about my monthly
+			projects, personal goings-on, and whatever I personally find interesting at a given moment.
+		</div>
+
+		<!-- <Banner title="Splashy banner element" accent="red">
 			Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
 			If you want to know more about how you can customise me, add more posts, and make it your own,
 			click on the GitHub icon link below and it will take you to my repo.
-		</Banner>
+		</Banner> -->
 
 		<br />
 		<div class="flex flex-wrap items-center gap-x-2">

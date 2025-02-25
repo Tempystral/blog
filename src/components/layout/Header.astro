@@ -2,15 +2,17 @@
 import Search from "@/components/Search.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { menuLinks } from "@/site.config";
+import { Icon } from "astro-icon/components";
 ---
 
-<header class="group relative mb-20 flex items-center sm:ps-[4.5rem]" id="main-header">
+<header class="group relative mb-20 flex items-center" id="main-header">
+	<!-- sm:ps-[4.5rem] -->
+	<!-- <Icon name="mdi:checkbox-multiple-blank-circle" size={56} class="me-4" /> -->
 	<div class="flex sm:flex-col">
 		<a
 			aria-current={Astro.url.pathname === "/" ? "page" : false}
 			class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
 			href="/">
-			LOGO
 			<span class="text-xl font-bold sm:text-2xl">Eye of the Storm</span>
 		</a>
 		<nav
@@ -32,6 +34,9 @@ import { menuLinks } from "@/site.config";
 	</div>
 	<Search />
 	<ThemeToggle />
+	<a href="rss.xml" class="ms-4">
+		<Icon name="mdi:rss" size={32} />
+	</a>
 	<mobile-button>
 		<button
 			aria-expanded="false"

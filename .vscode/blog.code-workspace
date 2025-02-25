@@ -72,7 +72,7 @@
 			"quickfix.biome": "explicit"
 		},
 
-		"typescript.tsdk": "${workspaceFolder:Project}/node_modules/typescript/lib",
+		"typescript.tsdk": "Project/node_modules/typescript/lib",
 		"astro.content-intellisense": true,
 		// This is just to make tailwind class strings shorter visually
 		"[astro]": {

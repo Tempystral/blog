@@ -69,7 +69,7 @@
 		--theme-text: 250, 250, 250;
 		--theme-accent: 29, 31, 32;
 		--theme-accent-2: 236, 131, 5;
-		--theme-accent-3: 255, 64, 129;
+		--theme-accent-3: 0, 188, 212;
 		--theme-quote: 203, 42, 66;
 	}
 }
@@ -79,7 +79,7 @@
 		content: "";
 		position: absolute;
 		@apply sm:-inset-5 sm:size-16;
-		@apply aspect-square rounded-full bg-accent;
+		@apply aspect-square rounded-full;
 	}
 
 	.angled-corner {

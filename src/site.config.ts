@@ -37,10 +37,10 @@ export const menuLinks: { path: string; title: string }[] = [
 		path: "/posts/",
 		title: "Blog",
 	},
-	{
+	/* {
 		path: "/notes/",
 		title: "Notes",
-	},
+	}, */
 ];
 
 // TODO: Something like this for more easily adding custom colour splashes.
