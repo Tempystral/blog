@@ -32,11 +32,14 @@ import { Icon } from "astro-icon/components";
 			}
 		</nav>
 	</div>
-	<Search />
-	<ThemeToggle />
-	<a href="rss.xml" class="ms-4">
-		<Icon name="mdi:rss" size={32} class="hover:text-accent-2" />
-	</a>
+
+	<span class="ms-auto flex">
+		<a href="rss.xml" class="ms-2 sm:ms-4">
+			<Icon name="mdi:rss" size={32} class="hover:text-accent-2" />
+		</a>
+		<Search />
+		<ThemeToggle />
+	</span>
 	<mobile-button>
 		<button
 			aria-expanded="false"
