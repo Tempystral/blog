@@ -20,9 +20,9 @@ import rehypeUnwrapImages from "rehype-unwrap-images";
 
 // https://astro.build/config
 export default defineConfig({
-	image: {
+	/* image: {
 		domains: ["webmention.io"],
-	},
+	}, */
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		icon(),
