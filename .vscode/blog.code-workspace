@@ -32,7 +32,7 @@
 			".editorconfig": true,
 			"postcss*": true,
 			"pnpm-lock*": true,
-			"netlify.toml": true,
+			//"netlify.toml": true,
 			//"node_modules": true,
 			"dist": true,
 			".astro": true
