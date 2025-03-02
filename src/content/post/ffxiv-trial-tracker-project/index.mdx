@@ -81,7 +81,7 @@ So the plan was to pull the data I want from the FFXIV API, manipulate it into s
 
 I actually have one for each expansion in the game, to avoid bloat. Once the data files are created, they're loaded into my app, deserialized as an object, and Pug can simply loop over that object to populate the contents of my webpage.
 
-<!-- Todo: Move this to the end? -->
+{/* <!-- Todo: Move this to the end? --> */}
 # JavaScript itself is pretty alright
 For what it's worth, I actually didn't mind coding in JavaScript. While writing my data-scraping script, I found a number of nice creature comforts that made the language pleasant to work in: I like the curly-brace object syntax; It's very cool that creating structured data doesn't require defining an entire class first. I also appreciate that the language has template strings, and that JSON is so easily converted from data to object. In most languages serialization is a measured and careful affair, but JSON just _works_ with JS. I'm sure experienced devs are looking at deeper, more arcane metrics of quality, but I appreciate these small creature comforts in a language.
 
@@ -89,7 +89,7 @@ That's not to say I like everything about it; I wish it had native type checking
 
 Overall though, I don't mind JavaScript from a pure code perspective. It's alright.
 
-<!-- TODO This bit seems out of place. Probably works better when talking about the structural changes made when moving to Vue -->
+{/* <!-- TODO This bit seems out of place. Probably works better when talking about the structural changes made when moving to Vue --> */}
 
 As I worked, I made sketches in my notebook to help with certain things like styling and page layout. One particularly clever thing I figured out was a set of "scale factors" I could use to size elements the same at various viewport sizes. Bulma lets you use different numbers of columns for some elements based on the viewport width. I wanted to maintain a general size and shape in my bottom-level elements, and I found that there was an ideal multiple for each viewport width which made my columns feel consistent.
 
@@ -97,13 +97,13 @@ FIGURE; Description: The scale factor of a fullhd page is 24, so a 12-column con
 
 At the same time, I added some express routes and updated my templates to let me view multiple expansions at once or just one at a time. I was feeling pretty good about myself!
 
-<!-- TODO IF you cut out the previous part, you can segue nicely from sweet-talking JS to shit-talking it -->
+{/* <!-- TODO IF you cut out the previous part, you can segue nicely from sweet-talking JS to shit-talking it --> */}
 # The Ruination
 It was time to do clientside JS. Up until this point, I had solved a number of problems on my own with a combination of Google-fu and some good guesses. This however was a different beast.
 
 Prior to this project, I had worked with JavaScript only a few times: I fixed up a former master's project for my own uses, and built a NodeCG bundle for a speedrun event I ran, plus a handful of additions to static webpages here and there. In the most complex cases, the backend work was done for me, and I was working in an environment where all the relevant functions and data were available. All I had to do was code the tool I wanted. In this circumstance, things were different.
 
-<!-- TODO: This ended up being so inconsequential, and I figured out the answer immediately. This can probably be removed. -->
+{/* <!-- TODO: This ended up being so inconsequential, and I figured out the answer immediately. This can probably be removed. --> */}
 ### *Problem 2: Wait, how do you communicate with the server?*
 I work primarily with Java in my day job (Yes, go ahead and boo, I'm right there with you) and I have some familiarity with client-server interaction as a result. With a JavaBean-based project, your clientside code communicates with the server by performing a JNDI lookup, getting a reference to the Bean running on the server, and performing Remote Method Invocation to execute code.
 ```java
@@ -146,8 +146,7 @@ Loading module from “http://localhost:8888/public/js/brushstroke” was blocke
 ```
 Wh-what? This error is even more baffling than the last. And it's not even _right_! It's not that the MIME type is wrong, it's that the file can't be found _at all_. But at least I know why.
 
-<Figure src="/posts/ffxiv/old-static.png" class="floatright img-container" alt="My static directory" >
-</Figure>
+<Figure src="/posts/ffxiv/old-static.png" class="floatright img-container" alt="My static directory" />
 
 When making a website, it's common to have a `static` or `public` folder holding your assets. Any [local image](public/images/cover-art/Socks_Rocks_the_Hill.jpg) or font or indeed, the javaScript for the theme switcher button in the bottom right corner of this page is in my static directory. My `node_modules` directory isn't being forwarded to the client like `public` and I don't need to be told that's a bad idea. Of course, I had already come to this conclusion earlier when I thought I might need to copy the Brushstroke library into my `public/js` folder. I already knew `node_modules` wouldn't be visible to the browser.
 
@@ -173,7 +172,7 @@ It's true that I've jumped into the deep end on this project, and that a good pa
 
 But maybe my project doesn't need a server. Honestly the only reason it needs one would be to fetch the json for saving and I don't even necessarily need to do that; The actual data worth saving is just the IDs, so I could feasibly construct a brand-new json file in the client as the user interacts with things.
 
-<!-- TODO: Go through old commits from after you moved to vue and describe the setup process and some difficulties working with the framework -->
+{/* <!-- TODO: Go through old commits from after you moved to vue and describe the setup process and some difficulties working with the framework --> */}
 
 May 30/31
 Pinia has solved some of my woes. I spent a lot of time trying to figure out how to propagate data up the chain before I realized it was a meaningless exercise. In my mind, I'd store a structure similar to the original, but only containing IDs and which goals had been completed. Then any time the data object was updated, changes would propagate down the chain and be rendered differently in the Trial/Raid component. Unfortunately, I had a hard time trying to figure out how to save the data in that format. Because the duties don't know which collection or expansion they belong to, I'd have to perform a bunch of searches on the original data which seemed inefficient.
