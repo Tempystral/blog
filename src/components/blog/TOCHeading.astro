@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 ---
 
-<li class={`${depth > 2 ? "ms-2" : ""}`}>
+<li class={`${depth > 1 ? "ms-2" : ""}`}>
 	<a
 		aria-label={`Scroll to section: ${text}`}
 		class={`block  line-clamp-2 hover:font-bold hover:ms-2 transition-[margin] w-fit ${depth <= 2 ? "mt-3" : "mt-2 text-[0.6875rem]"}`}
