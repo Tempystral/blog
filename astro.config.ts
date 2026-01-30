@@ -6,6 +6,7 @@ import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
+import AutoImport from "astro-auto-import";
 import { defineConfig, envField } from "astro/config";
 import { expressiveCodeOptions, siteConfig } from "./src/site.config";
 
@@ -21,12 +22,12 @@ import rehypeUnwrapImages from "rehype-unwrap-images";
 // https://astro.build/config
 export default defineConfig({
 	image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-      config: {
-        limitInputPixels: false,
-      }
-    }
+		service: {
+			entrypoint: "astro/assets/services/sharp",
+			config: {
+				limitInputPixels: false,
+			},
+		},
 	},
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
@@ -36,17 +37,28 @@ export default defineConfig({
 			nesting: true,
 		}),
 		sitemap(),
+		AutoImport({
+			imports: [
+				{
+					"./src/components/blog/components": [
+						"Detail",
+						"Figure",
+						"TextMessage",
+						"Tweet",
+						"Twitch",
+						"Video",
+						"Youtube",
+					],
+				},
+			],
+		}),
 		mdx(),
 		robotsTxt(),
 		webmanifest({
 			// See: https://github.com/alextim/astro-lib/blob/main/packages/astro-webmanifest/README.md
-			/**
-			 * required
-			 **/
+			/** required **/
 			name: siteConfig.title,
-			/**
-			 * optional
-			 **/
+			/** optional **/
 			// short_name: "Astro_Cactus",
 			description: siteConfig.description,
 			lang: siteConfig.lang,
@@ -113,6 +125,9 @@ export default defineConfig({
 			WEBMENTION_URL: envField.string({ context: "client", access: "public", optional: true }),
 			WEBMENTION_PINGBACK: envField.string({ context: "client", access: "public", optional: true }),
 		},
+	},
+	experimental: {
+		contentIntellisense: true,
 	},
 });
 
