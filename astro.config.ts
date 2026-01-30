@@ -2,12 +2,12 @@ import fs from "node:fs";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import AutoImport from "astro-auto-import";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
-import AutoImport from "astro-auto-import";
-import { defineConfig, envField } from "astro/config";
+import { defineConfig } from "astro/config";
 import { expressiveCodeOptions, siteConfig } from "./src/site.config";
 
 // Remark plugins
@@ -119,13 +119,7 @@ export default defineConfig({
 		},
 		plugins: [rawFonts([".ttf", ".woff"])],
 	},
-	env: {
-		schema: {
-			WEBMENTION_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
-			WEBMENTION_URL: envField.string({ context: "client", access: "public", optional: true }),
-			WEBMENTION_PINGBACK: envField.string({ context: "client", access: "public", optional: true }),
-		},
-	},
+	env: {},
 	experimental: {
 		contentIntellisense: true,
 	},
