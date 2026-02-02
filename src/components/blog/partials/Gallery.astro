@@ -1,0 +1,65 @@
+---
+import type { ImageMetadata } from "astro";
+import { undefined } from "astro:schema";
+import path from "path";
+
+interface Props {
+	src: string;
+	captions: Record<string, string>;
+}
+const { src, captions } = Astro.props;
+
+const images = await getImages(src);
+
+async function getImages(dir: string) {
+	const images = import.meta.glob<{ default: ImageMetadata }>(
+		"@/content/post/**/*.{jpeg,jpg,png,gif,webp}",
+	);
+	const slug = Astro.url.pathname.split("/")[2] ?? "";
+	const p = path.resolve("/src/content/post/", slug, dir);
+
+	const metadata: ImageMetadata[] = [];
+	for await (const [name, data] of Object.entries(images)) {
+		if (name.startsWith(p)) {
+			const meta = (await data()).default;
+			metadata.push(meta);
+		}
+	}
+	return metadata;
+}
+
+function getCaption(img: ImageMetadata) {
+	const key = getFilename(img);
+	console.log(key);
+	if (captions && key in captions) return captions[key];
+	else return undefined;
+}
+
+function getFilename(img: ImageMetadata) {
+	return img.src.substring(img.src.lastIndexOf("/") + 1, img.src.lastIndexOf("."));
+	// return img.src.split(/\/|\?/g).at(-2) ?? "";
+}
+
+// https://css-tricks.com/adaptive-photo-layout-with-flexbox/
+---
+
+<figure class="static flex flex-wrap gap-1 rounded-md bg-accent-2 p-2 dark:bg-quote">
+	{
+		images.map((img) => (
+			<a href={img.src} class="not-prose relative h-[30vh] flex-grow transition-transform">
+				<img
+					src={img.src}
+					alt={""}
+					class="not-prose max-h-full min-w-full rounded-sm object-cover align-bottom"
+				/>
+				{getCaption(img) != undefined && (
+					<div class="absolute bottom-0 left-0 h-full w-full opacity-0 transition-opacity hover:opacity-100">
+						<figcaption class="absolute bottom-0 flex w-full flex-col justify-center rounded-sm bg-accent-2 px-2 dark:bg-textColor">
+							<p class="text-center">{getCaption(img)}</p>
+						</figcaption>
+					</div>
+				)}
+			</a>
+		))
+	}
+</figure>

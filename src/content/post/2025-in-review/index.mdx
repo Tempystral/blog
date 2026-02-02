@@ -11,15 +11,11 @@ tags: [personal]
 draft: true
 ---
 import { Image, Picture } from "astro:assets";
-import { Figure, Detail } from "@/components/blog/partials";
+// import { Figure, Detail } from "@/components/blog/partials";
+import { Gallery } from "@/components/blog/partials";
 import saxophone from "./images/saxophone.jpg";
 import magiccards from "./images/magic-cards.jpg";
 import wanshitong from "./images/wan-shi-tong.jpg";
-import furries1 from "./images/cons/furries-1.jpg";
-import furries2 from "./images/cons/furries-2.jpg";
-import furries3 from "./images/cons/furries-3.jpg";
-import otaku1 from "./images/cons/otakuthon-1.jpg";
-import otaku2 from "./images/cons/otakuthon-2.jpg";
 
 
 Oops, I didn't write all year again!
@@ -43,7 +39,15 @@ I think I've settled on Limited as being my preferred format. EDH is, despite be
 Another thing that got me off my ass and out of the house this year were all the events I tried to hit up. Between Furnal Equinox, CanFURence, and Otakuthon, I ended up spending a lot of time in convention centers, which was exhausting but fun.
 
 {/* There has GOT to be a better way to do this */}
-<div class="flex flex-row">
+<Gallery src="./images/cons" captions={{
+  "furries-1": "Some cute ferrets I met at Furnal Equinox.",
+  "furries-2": "A deer with BIG ears from CanFURence. They had plastic hooves that clicked and clacked as they tried to pay for a commission, which was very charming.",
+  "furries-3": "My friend Grilled Cheese with her knife.",
+  "otakuthon-1": "This guy was trying to make the entire RX-78-2 Gundam out of Lego. It looked heavy!",
+  "otakuthon-2": "A beautiful Journey wanderer cosplay, also from Otakuthon.",
+  }} />
+
+{/* <div class="flex flex-row">
   <Picture src={furries1} alt="" layout="constrained" pictureAttributes={{style: "margin: 0;"}} />
   <Picture src={furries2} alt="" layout="constrained" pictureAttributes={{style: "margin: 0;"}} />
   <Picture src={furries3} alt="" layout="constrained" pictureAttributes={{style: "margin: 0;"}} />
@@ -52,7 +56,7 @@ Another thing that got me off my ass and out of the house this year were all the
 <div class="flex flex-row">
   <Picture src={otaku1} alt="" layout="constrained" pictureAttributes={{style: "margin: 0;"}} />
   <Picture src={otaku2} alt="" layout="constrained" pictureAttributes={{style: "margin: 0;"}} />
-</div>
+</div> */}
 
 My own online speedrunning event [Licenseathon](www.licenseathon.live) took up a good chunk of my summer too. While it was a lot of work, it was such a success, far eclipsing what we'd done in the past. It very nearly didn't happen, but thanks to the constant pressure by a friend, we managed to turn around the single best event we've ever had. Not only did we raise $1000 for the Transgender Law Center, we also had record turnout and an incredible technical performance. I'm extremely proud of the Licenseathon team for the work they put in this past summer.
 # Art
