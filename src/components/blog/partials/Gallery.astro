@@ -30,7 +30,6 @@ async function getImages(dir: string) {
 
 function getCaption(img: ImageMetadata) {
 	const key = getFilename(img);
-	console.log(key);
 	if (captions && key in captions) return captions[key];
 	else return undefined;
 }
