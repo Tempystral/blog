@@ -1,9 +1,8 @@
 {
 	"folders": [
 		{
-			"name": "src",
-			"path": "../"
-		}
+			"path": "../",
+		},
 	],
 
 	"settings": {
@@ -27,54 +26,59 @@
 			//"netlify.toml": true,
 			//"node_modules": true,
 			"dist": true,
-			".astro": true
+			".astro": true,
 		},
 		"terminal.integrated.defaultLocation": "view",
 		"terminal.integrated.cwd": "${workspaceFolder}",
 
 		"[markdown]": {
-			"editor.wordWrap": "on"
+			"editor.wordWrap": "on",
 		},
 
 		"[mdx]": {
 			"editor.wordWrap": "on",
-			"editor.defaultFormatter": "unifiedjs.vscode-mdx"
+			"editor.defaultFormatter": "unifiedjs.vscode-mdx",
 		},
 
-		"[javascript]": { "editor.defaultFormatter": "biomejs.biome" },
-		"[typescript]": { "editor.defaultFormatter": "biomejs.biome" },
-		"[javascriptreact]": { "editor.defaultFormatter": "biomejs.biome" },
-		"[typescriptreact]": { "editor.defaultFormatter": "biomejs.biome" },
-		"[json]": { "editor.defaultFormatter": "biomejs.biome" },
-		"[jsonc]": { "editor.defaultFormatter": "biomejs.biome" },
-
-		"emmet.includeLanguages": {
-			"mdx": "html"
+		"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+		"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+		"[javascriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
 		},
+		"[typescriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+		},
+		"[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+		"[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+		// "emmet.includeLanguages": {
+		// 	"mdx": "html",
+		// },
 		"emmet.syntaxProfiles": {
-			"javascript": "mdx"
+			"javascript": "mdx",
 		},
 
 		"editor.formatOnSave": true,
-		"prettier.documentSelectors": ["**/*.astro"],
+		//"prettier.documentSelectors": ["**/*.astro"],
 		"editor.codeActionsOnSave": {
 			"source.organizeImports": "never",
 			"source.organizeImports.biome": "explicit",
-			"quickfix.biome": "explicit"
+			"quickfix.biome": "explicit",
 		},
 
-		"typescript.tsdk": "../node_modules/typescript/lib",
+		"typescript.tsdk": "node_modules/typescript/lib",
 		"astro.content-intellisense": true,
 		// This is just to make tailwind class strings shorter visually
 		"[astro]": {
 			"editor.wordWrap": "wordWrapColumn",
-			"editor.wordWrapColumn": 80
+			"editor.wordWrapColumn": 80,
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
 		},
 		"tailwind-fold.foldStyle": "QUOTES",
-		"tailwind-fold.unfoldIfLineSelected": true
+		"tailwind-fold.unfoldIfLineSelected": true,
 	},
 	"extensions": {
 		"recommendations": ["astro-build.astro-vscode"],
-		"unwantedRecommendations": []
-	}
+		"unwantedRecommendations": [],
+	},
 }

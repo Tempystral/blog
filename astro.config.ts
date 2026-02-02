@@ -40,7 +40,7 @@ export default defineConfig({
 		AutoImport({
 			imports: [
 				{
-					"./src/components/blog/components": [
+					"./src/components/blog/partials": [
 						"Detail",
 						"Figure",
 						"TextMessage",
