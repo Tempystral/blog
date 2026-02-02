@@ -1,9 +1,8 @@
 import Detail from "./Detail.astro";
 import Figure from "./Figure.astro";
 import TextMessage from "./TextMessage.astro";
-import Tweet from "./Tweet.astro";
 import Twitch from "./Twitch.astro";
 import Video from "./Video.astro";
-import Youtube from "./Youtube.astro";
+import Gallery from "./Gallery.astro";
 
-export { Detail, Figure, Video, Youtube, Twitch, Tweet, TextMessage };
+export { Detail, Figure, Video, Twitch, TextMessage, Gallery };
