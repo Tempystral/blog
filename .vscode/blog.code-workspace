@@ -66,6 +66,7 @@
 			"quickfix.biome": "explicit",
 		},
 
+		"mdx.server.enable": true,
 		"typescript.tsdk": "node_modules/typescript/lib",
 		"astro.content-intellisense": true,
 		// This is just to make tailwind class strings shorter visually

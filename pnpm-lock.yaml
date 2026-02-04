@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@astro-community/astro-embed-twitter':
-        specifier: ^0.5.11
-        version: 0.5.11
       '@astrojs/mdx':
         specifier: 4.3.13
         version: 4.3.13(astro@5.16.14(@types/node@22.13.8)(jiti@1.21.7)(rollup@4.34.9)(sass@1.85.1)(typescript@5.8.2)(yaml@2.7.1))
