@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
+import { getCachedImage } from "@/data/media";
+import path from "path";
 
 interface Props {
 	src: string | ImageMetadata;
@@ -11,19 +13,16 @@ interface Props {
 }
 const { src, alt, colour } = Astro.props;
 
-const img: ImageMetadata | undefined = await setImage(src);
+const img: ImageMetadata | null = await setImage(src);
+
+function getAbsPath(p: string) {
+	const slug = Astro.url.pathname.split("/")[2] ?? "";
+	return path.resolve("/src/content/post/", slug, p);
+}
 
 async function setImage(input: typeof src) {
 	if (typeof input === "string") {
-		const images = import.meta.glob<{ default: ImageMetadata }>(
-			"@/content/post/**/*.{jpeg,jpg,png,gif,webp}",
-		);
-		const slug = Astro.url.pathname.split("/")[2];
-		const path = `/src/content/post/${slug}/${input}`;
-		if (images[path]) {
-			return (await images[path]()).default;
-		}
-		return;
+		return getCachedImage(getAbsPath(input));
 	}
 	return input;
 }

@@ -1,6 +1,6 @@
 ---
+import { imageCache } from "@/data/media";
 import type { ImageMetadata } from "astro";
-import { undefined } from "astro:schema";
 import path from "path";
 
 interface Props {
@@ -11,15 +11,16 @@ const { src, captions } = Astro.props;
 
 const images = await getImages(src);
 
-async function getImages(dir: string) {
-	const images = import.meta.glob<{ default: ImageMetadata }>(
-		"@/content/post/**/*.{jpeg,jpg,png,gif,webp}",
-	);
+function getAbsPath(p: string) {
 	const slug = Astro.url.pathname.split("/")[2] ?? "";
-	const p = path.resolve("/src/content/post/", slug, dir);
+	return path.resolve("/src/content/post/", slug, p);
+}
+
+async function getImages(dir: string) {
+	const p = getAbsPath(dir);
 
 	const metadata: ImageMetadata[] = [];
-	for await (const [name, data] of Object.entries(images)) {
+	for await (const [name, data] of Object.entries(imageCache)) {
 		if (name.startsWith(p)) {
 			const meta = (await data()).default;
 			metadata.push(meta);
