@@ -31,12 +31,6 @@ export default defineConfig({
 	},
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
-		icon(),
-		tailwind({
-			applyBaseStyles: false,
-			nesting: true,
-		}),
-		sitemap(),
 		AutoImport({
 			imports: [
 				{
@@ -46,6 +40,12 @@ export default defineConfig({
 			],
 		}),
 		mdx(),
+		icon(),
+		tailwind({
+			applyBaseStyles: false,
+			nesting: true,
+		}),
+		sitemap(),
 		robotsTxt(),
 		webmanifest({
 			// See: https://github.com/alextim/astro-lib/blob/main/packages/astro-webmanifest/README.md
