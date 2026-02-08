@@ -34,7 +34,14 @@ export default defineConfig({
 		AutoImport({
 			imports: [
 				{
-					"./src/components/blog/partials": ["Detail", "Figure", "TextMessage", "Twitch", "Video"],
+					"./src/components/blog/partials": [
+						"Detail",
+						"Figure",
+						"Gallery",
+						"TextMessage",
+						"Twitch",
+						"Video",
+					],
 					"astro-embed": ["Tweet", "YouTube"],
 				},
 			],
